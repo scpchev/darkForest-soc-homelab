@@ -1,0 +1,25 @@
+Reference ID    : 0A0A0202 (ntp.darkforest.lab)
+Stratum         : 4
+Ref time (UTC)  : Tue Jun 16 18:50:02 2026
+System time     : 0.000001790 seconds slow of NTP time
+Last offset     : -0.000003789 seconds
+RMS offset      : 0.000074470 seconds
+Frequency       : 9.245 ppm fast
+Residual freq   : -0.000 ppm
+Skew            : 0.056 ppm
+Root delay      : 0.011314109 seconds
+Root dispersion : 0.000988268 seconds
+Update interval : 513.1 seconds
+Leap status     : Normal
+
+  .-- Source mode  '^' = server, '=' = peer, '#' = local clock.
+ / .- Source state '*' = current best, '+' = combined, '-' = not combined,
+| /             'x' = may be in error, '~' = too variable, '?' = unusable.
+||                                                 .- xxxx [ yyyy ] +/- zzzz
+||      Reachability register (octal) -.           |  xxxx = adjusted offset,
+||      Log2(Polling interval) --.      |          |  yyyy = measured offset,
+||                                \     |          |  zzzz = estimated error.
+||                                 |    |           \
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^* ntp.darkforest.lab            3   9   377   263  -5825ns[-9614ns] +/- 6328us

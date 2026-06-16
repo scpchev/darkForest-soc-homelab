@@ -1,0 +1,256 @@
+[
+    {
+        "Id": "affbfa67b834a26f991c88459e5404012124ba46112379e9a0567c828f07da66",
+        "Created": "2026-04-27T11:07:21.242425684Z",
+        "Path": "/opt/guacamole/entrypoint.sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1298,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-06-11T21:39:39.224072748Z",
+            "FinishedAt": "2026-06-11T21:39:38.829501263Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-06-15T21:35:11.393572565Z",
+                        "End": "2026-06-15T21:35:11.418099162Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-06-15T21:40:11.418379489Z",
+                        "End": "2026-06-15T21:40:11.450151969Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-06-15T21:45:11.450906956Z",
+                        "End": "2026-06-15T21:45:11.478578971Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-06-15T21:50:11.479787483Z",
+                        "End": "2026-06-15T21:50:11.502383231Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    },
+                    {
+                        "Start": "2026-06-15T21:55:11.502724146Z",
+                        "End": "2026-06-15T21:55:11.526323289Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:2d266a525a72ad55d8ea7cd4ca8342a1b44075759b03660d8684821b3636a922",
+        "ResolvConfPath": "/var/lib/docker/containers/affbfa67b834a26f991c88459e5404012124ba46112379e9a0567c828f07da66/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/affbfa67b834a26f991c88459e5404012124ba46112379e9a0567c828f07da66/hostname",
+        "HostsPath": "/var/lib/docker/containers/affbfa67b834a26f991c88459e5404012124ba46112379e9a0567c828f07da66/hosts",
+        "LogPath": "/var/lib/docker/containers/affbfa67b834a26f991c88459e5404012124ba46112379e9a0567c828f07da66/affbfa67b834a26f991c88459e5404012124ba46112379e9a0567c828f07da66-json.log",
+        "Name": "/guacd",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "guacamole_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "affbfa67b834",
+            "Domainname": "",
+            "User": "guacd",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "4822/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LC_ALL=C.UTF-8",
+                "LD_LIBRARY_PATH=/opt/guacamole/lib"
+            ],
+            "Cmd": null,
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "nc -z 127.0.0.1 4822 || exit 1"
+                ],
+                "Interval": 300000000000,
+                "Timeout": 5000000000
+            },
+            "Image": "guacamole/guacd",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/opt/guacamole/entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "ab67d4b283065354470dc409ad15869e4c0c4c18e0725e570f9527661a40755b",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "guacamole",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/chev/guacamole",
+                "com.docker.compose.service": "guacd",
+                "com.docker.compose.version": "1.29.2"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "ea0b3c856b33843fa7ce93c482e20c276c41c90997ae3b1d44b166ec8626c0ef",
+            "SandboxKey": "/var/run/docker/netns/ea0b3c856b33",
+            "Ports": {
+                "4822/tcp": null
+            },
+            "Networks": {
+                "guacamole_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "affbfa67b834",
+                        "guacd"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "7367c3ddd51917c0b993da05766205acb76c92892cdf9b5fdd7e2c345a767131",
+                    "EndpointID": "c6b51b1a64fab86544ae1f48f8e4856b3518f2513d0290a31f3c1bea0e7554ca",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.3",
+                    "MacAddress": "b6:7e:ef:d4:bd:c9",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "guacd",
+                        "affbfa67b834"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+            "digest": "sha256:2d266a525a72ad55d8ea7cd4ca8342a1b44075759b03660d8684821b3636a922",
+            "size": 1574,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

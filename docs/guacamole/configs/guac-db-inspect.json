@@ -1,0 +1,259 @@
+[
+    {
+        "Id": "23e8e23d637f95e3d44c9b67e1ef1461efe255b936e549ca31fda5b3bc23d4b3",
+        "Created": "2026-04-27T11:07:21.27876922Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "mysqld"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1294,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-06-11T21:39:39.232589384Z",
+            "FinishedAt": "2026-06-11T21:39:38.8289706Z"
+        },
+        "Image": "sha256:d0304ed9fdb64a3f6c7ad11a5fb4f13abfc10e6dfa3f288d652e7320c34df7f9",
+        "ResolvConfPath": "/var/lib/docker/containers/23e8e23d637f95e3d44c9b67e1ef1461efe255b936e549ca31fda5b3bc23d4b3/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/23e8e23d637f95e3d44c9b67e1ef1461efe255b936e549ca31fda5b3bc23d4b3/hostname",
+        "HostsPath": "/var/lib/docker/containers/23e8e23d637f95e3d44c9b67e1ef1461efe255b936e549ca31fda5b3bc23d4b3/hosts",
+        "LogPath": "/var/lib/docker/containers/23e8e23d637f95e3d44c9b67e1ef1461efe255b936e549ca31fda5b3bc23d4b3/23e8e23d637f95e3d44c9b67e1ef1461efe255b936e549ca31fda5b3bc23d4b3-json.log",
+        "Name": "/guac-db",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "guacamole_db_data:/var/lib/mysql:rw",
+                "/home/chev/guacamole/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "guacamole_default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "guacamole_db_data",
+                "Source": "/var/lib/docker/volumes/guacamole_db_data/_data",
+                "Destination": "/var/lib/mysql",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/chev/guacamole/initdb.sql",
+                "Destination": "/docker-entrypoint-initdb.d/initdb.sql",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "23e8e23d637f",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3306/tcp": {},
+                "33060/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MYSQL_ROOT_PASSWORD=<REDACTED>,
+                "MYSQL_DATABASE=guacamole_db",
+                "MYSQL_USER=guacuser",
+                "MYSQL_PASSWORD=<REDACTED>,
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.19",
+                "MYSQL_MAJOR=8.0",
+                "MYSQL_VERSION=8.0.46-1.el9",
+                "MYSQL_SHELL_VERSION=8.0.46-1.el9"
+            ],
+            "Cmd": [
+                "mysqld"
+            ],
+            "Image": "mysql:8.0",
+            "Volumes": {
+                "/docker-entrypoint-initdb.d/initdb.sql": {},
+                "/var/lib/mysql": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "com.docker.compose.config-hash": "78ce9c1a62f6f0dd6813cb62dd9fc94d18f1254ba216272a91c5f88d235b5054",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "guacamole",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/chev/guacamole",
+                "com.docker.compose.service": "guac-db",
+                "com.docker.compose.version": "1.29.2"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "3652e1f279fe765926f5b3ae2c0fb5b4e353b516fa5435691cbb99d2382067c6",
+            "SandboxKey": "/var/run/docker/netns/3652e1f279fe",
+            "Ports": {
+                "3306/tcp": null,
+                "33060/tcp": null
+            },
+            "Networks": {
+                "guacamole_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "23e8e23d637f",
+                        "guac-db"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "7367c3ddd51917c0b993da05766205acb76c92892cdf9b5fdd7e2c345a767131",
+                    "EndpointID": "c0d52fbd41edd9b170cee5cfebbc7759a654498fa134b7941ebf8c6515b4935f",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.4",
+                    "MacAddress": "1e:c8:80:16:89:b2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "guac-db",
+                        "23e8e23d637f"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:b09c60e595de1f1ff13d25b1669999445c254d86e8c203f6e311b0ab0f8ec2f3",
+            "size": 3045,
+            "annotations": {
+                "com.docker.official-images.bashbrew.arch": "amd64",
+                "org.opencontainers.image.base.digest": "sha256:f821da6cbb2dda8ef6a49834c706c892294726e6751ba47fb90afd93e5222cd9",
+                "org.opencontainers.image.base.name": "oraclelinux:9-slim",
+                "org.opencontainers.image.created": "2026-04-21T23:11:58Z",
+                "org.opencontainers.image.revision": "7cf11d5360282effadb347353d5f82339506b106",
+                "org.opencontainers.image.source": "https://github.com/docker-library/mysql.git#7cf11d5360282effadb347353d5f82339506b106:8.0",
+                "org.opencontainers.image.url": "https://hub.docker.com/_/mysql",
+                "org.opencontainers.image.version": "8.0.46"
+            },
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

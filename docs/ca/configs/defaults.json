@@ -1,0 +1,6 @@
+{
+	"ca-url": "https://ca.darkforest.lab",
+	"ca-config": "/root/.step/config/ca.json",
+	"fingerprint": "8c4617ddd37e1e9ec25bc32e2ed43dc57c6c4593d3ddc538bef09e00cc02e964",
+	"root": "/root/.step/certs/root_ca.crt"
+}

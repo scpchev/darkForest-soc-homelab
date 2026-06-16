@@ -1,0 +1,185 @@
+===== PASSWORD =====
+./docs/guacamole/configs/guac-db-inspect.json:173:                "MYSQL_ROOT_PASSWORD=rootpass",
+./docs/guacamole/configs/guac-db-inspect.json:176:                "MYSQL_PASSWORD=guacpass",
+./docs/guacamole/configs/guacamole-inspect.json:158:                "MYSQL_PASSWORD=guacpass",
+./docs/guacamole/configs/docker-compose.yml:9:      MYSQL_ROOT_PASSWORD: rootpass
+./docs/guacamole/configs/docker-compose.yml:12:      MYSQL_PASSWORD: guacpass
+./docs/guacamole/configs/docker-compose.yml:32:      MYSQL_PASSWORD: guacpass
+./docs/guacamole/configs/initdb.sql:101:-- Table of users. Each user has a unique username and a hashed password
+./docs/guacamole/configs/initdb.sql:103:-- salted passwords, other systems may set unsalted passwords by simply not
+./docs/guacamole/configs/initdb.sql:112:  -- Optionally-salted password
+./docs/guacamole/configs/initdb.sql:113:  `password_hash` binary(32)   NOT NULL,
+./docs/guacamole/configs/initdb.sql:114:  `password_salt` binary(32),
+./docs/guacamole/configs/initdb.sql:115:  `password_date` datetime     NOT NULL,
+./docs/guacamole/configs/initdb.sql:594:-- User password history
+./docs/guacamole/configs/initdb.sql:597:CREATE TABLE guacamole_user_password_history (
+./docs/guacamole/configs/initdb.sql:599:  `password_history_id` int(11) NOT NULL AUTO_INCREMENT,
+./docs/guacamole/configs/initdb.sql:602:  -- Salted password
+./docs/guacamole/configs/initdb.sql:603:  `password_hash` binary(32) NOT NULL,
+./docs/guacamole/configs/initdb.sql:604:  `password_salt` binary(32),
+./docs/guacamole/configs/initdb.sql:605:  `password_date` datetime   NOT NULL,
+./docs/guacamole/configs/initdb.sql:607:  PRIMARY KEY (`password_history_id`),
+./docs/guacamole/configs/initdb.sql:610:  CONSTRAINT `guacamole_user_password_history_ibfk_1`
+./docs/guacamole/configs/initdb.sql:635:-- Create default user "guacadmin" with password "guacadmin"
+./docs/guacamole/configs/initdb.sql:637:INSERT INTO guacamole_user (entity_id, password_hash, password_salt, password_date)
+./docs/gitea/configs/app.ini:73:PASSWORD_HASH_ALGO = pbkdf2
+./docs/ca/configs/step-ca.service:8:ExecStart=/usr/bin/step-ca /root/.step/config/ca.json --password-file /root/.step/secrets/password.txt
+./docs/wazuh/configs/filebeat.yml:10:  password: ${password}
+./docs/wazuh/configs/opensearch_dashboards.yml:6:# opensearch.password: kibanaserver
+./docs/wazuh/configs/ossec.conf:294:    <use_password>no</use_password>
+./docs/splunk/configs/server.conf:6:sslPassword = $7$JNa6KPEAQ0ZkZI/fW9f7vJKPjdwjzuYg08LSUNnobS4A4L1Klq5nZA==
+./docs/bookstack/configs/bookstack.env:27:DB_PASSWORD=DarkForestBookStack2026!
+./docs/bookstack/configs/bookstack.env:52:MAIL_PASSWORD=null
+./docs/bookstack/configs/php.ini:507:; out of your application such as database usernames and passwords or worse.
+./docs/bookstack/configs/php.ini:882:; Define the anonymous ftp password (your email address). PHP's default setting
+./docs/bookstack/configs/php.ini:1151:; Default password for mysqli_connect() (doesn't apply in safe mode).
+./docs/bookstack/configs/php.ini:1152:; Note that this is generally a *bad* idea to store passwords in this file.
+./docs/bookstack/configs/php.ini:1154:; and reveal this password!  And of course, any users with read access to this
+./docs/bookstack/configs/php.ini:1155:; file will be able to reveal the password as well.
+./docs/bookstack/exports/system-info.txt:30:systemd-ask-password-console.path          static          -
+./docs/bookstack/exports/system-info.txt:31:systemd-ask-password-wall.path             static          -
+./docs/bookstack/exports/system-info.txt:127:systemd-ask-password-console.service       static          -
+./docs/bookstack/exports/system-info.txt:128:systemd-ask-password-wall.service          static          -
+./docs/grafana/configs/provisioning/datasources/sample.yaml:62:#       # <string> Sets the database password, if necessary.
+./docs/grafana/configs/provisioning/datasources/sample.yaml:63:#       password:
+./docs/grafana/configs/provisioning/datasources/sample.yaml:64:#       # <string> Sets the basic authorization password.
+./docs/grafana/configs/provisioning/datasources/sample.yaml:65:#       basicAuthPassword:
+./docs/grafana/configs/grafana.ini:77:# optional password to be used to decrypt key file
+./docs/grafana/configs/grafana.ini:134:# You can configure the database connection by specifying type, host, name, user and password
+./docs/grafana/configs/grafana.ini:142:# If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
+./docs/grafana/configs/grafana.ini:143:;password =
+./docs/grafana/configs/grafana.ini:224:# redis: config like redis server e.g. `network=tcp,addr=127.0.0.1:6379,pool_size=100,db=0,username=grafana,password=grafanaRocks,ssl=false`. Only addr is required. network may be 'tcp' or 'unix'. ssl may be 'true', 'false', or 'insecure'.
+./docs/grafana/configs/grafana.ini:367:# default admin password, can be changed before first start of grafana,  or in profile settings
+./docs/grafana/configs/grafana.ini:368:;admin_password = admin
+./docs/grafana/configs/grafana.ini:563:;password_hint = password
+./docs/grafana/configs/grafana.ini:917:;password_policy = false
+./docs/grafana/configs/grafana.ini:1095:# Specifies whether Entra password auth can be used for the MSSQL data source
+./docs/grafana/configs/grafana.ini:1097:;azure_entra_password_credentials_enabled = false
+./docs/grafana/configs/grafana.ini:1119:# If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
+./docs/grafana/configs/grafana.ini:1120:;password =
+./docs/grafana/configs/grafana.ini:1334:# The password that should be used to authenticate with Redis.
+./docs/grafana/configs/grafana.ini:1335:;ha_redis_password =
+./docs/grafana/configs/grafana.ini:1341:# The password that should be used to authenticate with Redis Sentinel.
+./docs/grafana/configs/grafana.ini:1343:;ha_redis_sentinel_password =
+./docs/grafana/configs/grafana.ini:1573:# Optional password for basic authentication on requests sent to Loki. Can be left blank.
+./docs/grafana/configs/grafana.ini:1574:; loki_basic_auth_password = "mypass"
+./docs/grafana/configs/grafana.ini:1628:# Optional password for basic authentication on requests sent to Loki. Can be left blank.
+./docs/grafana/configs/grafana.ini:1629:; loki_basic_auth_password =
+./docs/grafana/configs/grafana.ini:1788:; basic_auth_password =
+./docs/grafana/configs/grafana.ini:1885:;password =
+./docs/grafana/configs/grafana.ini:1981:# ha_engine_password allows setting an optional password to authenticate with the engine
+./docs/grafana/configs/grafana.ini:1982:;ha_engine_password = ""
+./docs/grafana/configs/ldap.toml:30:# Search user bind password
+./docs/grafana/configs/ldap.toml:31:# If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
+./docs/grafana/configs/ldap.toml:32:bind_password = 'grafana'
+./docs/grafana/configs/ldap.toml:33:# We recommend using variable expansion for the bind_password, for more info https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#variable-expansion
+./docs/grafana/configs/ldap.toml:34:# bind_password = '$__env{LDAP_BIND_PASSWORD}'
+
+===== SECRET =====
+./docs/gitea/configs/app.ini:29:LFS_JWT_SECRET = ZyxlUDF6Uyy0ZXGCKd0WsUtIEuXQ-2N_pBzPu8I8w4A
+./docs/gitea/configs/app.ini:76:JWT_SECRET = 0FLH3wF70yhl9LDvicyxnajAKsQspM3gO4LLkraIpAg
+./docs/ca/configs/ca.json:5:	"key": "/root/.step/secrets/intermediate_ca_key",
+./docs/ca/configs/step-ca.service:8:ExecStart=/usr/bin/step-ca /root/.step/config/ca.json --password-file /root/.step/secrets/password.txt
+./docs/grafana/configs/grafana.ini:145:# Example: mysql://user:secret@host:port/database
+./docs/grafana/configs/grafana.ini:337:# Intercom secret, optional, used to hash user_id before passing to Intercom via Rudderstack
+./docs/grafana/configs/grafana.ini:338:;intercom_secret =
+./docs/grafana/configs/grafana.ini:374:# Used for signing. If you change it later you may need to re-encode secrets.
+./docs/grafana/configs/grafana.ini:376:;secret_key = CHANGE_ME_TO_A_RANDOM_SECRET
+./docs/grafana/configs/grafana.ini:378:# current key provider used for envelope encryption, default to static value specified by secret_key
+./docs/grafana/configs/grafana.ini:379:;encryption_provider = secretKey.v1
+./docs/grafana/configs/grafana.ini:596:[secretscan]
+./docs/grafana/configs/grafana.ini:597:# Enable secretscan feature
+./docs/grafana/configs/grafana.ini:604:;base_url = https://secret-scanning.grafana.net
+./docs/grafana/configs/grafana.ini:715:;client_secret = some_secret
+./docs/grafana/configs/grafana.ini:744:;client_secret = some_secret
+./docs/grafana/configs/grafana.ini:774:;client_secret = some_client_secret
+./docs/grafana/configs/grafana.ini:806:;client_secret = some_secret
+./docs/grafana/configs/grafana.ini:821:;client_secret = some_client_secret
+./docs/grafana/configs/grafana.ini:847:;client_secret = some_secret
+./docs/grafana/configs/grafana.ini:879:;client_secret = some_secret
+./docs/grafana/configs/grafana.ini:979:# Options are: default (AWS SDK Default), keys (Access && secret key), credentials (Credentials field), ec2_iam_role (EC2 IAM Role)
+./docs/grafana/configs/grafana.ini:1074:# Override the AAD application client secret
+./docs/grafana/configs/grafana.ini:1076:;user_identity_client_secret =
+./docs/grafana/configs/grafana.ini:1880:;secret_key =
+./docs/grafana/configs/grafana.ini:2198:###################################### Secrets Manager ######################################
+./docs/grafana/configs/grafana.ini:2199:[secrets_manager]
+./docs/grafana/configs/grafana.ini:2201:;encryption_provider = secret_key.v1
+./docs/grafana/configs/grafana.ini:2207:# Whether to create the MT secrets management database
+./docs/grafana/configs/grafana.ini:2208:;run_secrets_db_migrations = true
+./docs/grafana/configs/grafana.ini:2209:# Whether to run the data key id migration. Requires that RunSecretsDBMigrations is also true.
+./docs/grafana/configs/grafana.ini:2212:[secrets_manager.encryption.secret_key.v1]
+./docs/grafana/configs/grafana.ini:2216:;secret_key = CHANGE_ME_TO_A_RANDOM_SECRET
+
+===== TOKEN =====
+./docs/guacamole/configs/nginx.conf:21:	# server_tokens off;
+./docs/gitea/configs/nginx.conf:22:	server_tokens off; # Recommended practice is to turn this off
+./docs/gitea/configs/app.ini:72:INTERNAL_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3ODEzNjIxOTB9.lnC5pGVxmZOAJtzNCtuZHRvIG8BewikA4KMVDYRZ7Ko
+./docs/bookstack/configs/php.ini:824:; security tokens of the calling client.  This allows IIS to define the
+./docs/grafana/configs/nginx.conf:22:	server_tokens off; # Recommended practice is to turn this off
+./docs/grafana/configs/grafana.ini:600:# Interval to check for token leaks
+./docs/grafana/configs/grafana.ini:603:# base URL of the grafana token leak check service
+./docs/grafana/configs/grafana.ini:609:# Whether to revoke the token if a leak is detected or just send a notification
+./docs/grafana/configs/grafana.ini:614:# When set, Grafana will not allow the creation of tokens with expiry greater than this setting.
+./docs/grafana/configs/grafana.ini:615:; token_expiration_day_limit =
+./docs/grafana/configs/grafana.ini:624:# The maximum lifetime (duration) an authenticated user can be inactive before being required to login at next visit. Default is 7 days (7d). This setting should be expressed as a duration, e.g. 5m (minutes), 6h (hours), 10d (days), 2w (weeks), 1M (month). The lifetime resets at each successful token rotation.
+./docs/grafana/configs/grafana.ini:630:# How often should auth tokens be rotated for authenticated users when being active. The default is each 10 minutes.
+./docs/grafana/configs/grafana.ini:631:;token_rotation_interval_minutes = 10
+./docs/grafana/configs/grafana.ini:655:# simultaneously refreshing OAuth tokens. This mechanism waits at least this amount
+./docs/grafana/configs/grafana.ini:658:; oauth_refresh_token_server_lock_min_wait_ms = 1000
+./docs/grafana/configs/grafana.ini:718:;token_url = https://github.com/login/oauth/access_token
+./docs/grafana/configs/grafana.ini:733:# GitHub OAuth apps does not provide refresh tokens and the access tokens never expires.
+./docs/grafana/configs/grafana.ini:734:;use_refresh_token = false
+./docs/grafana/configs/grafana.ini:747:;token_url = https://gitlab.com/oauth/token
+./docs/grafana/configs/grafana.ini:762:;use_refresh_token = true
+./docs/grafana/configs/grafana.ini:763:;validate_id_token = false
+./docs/grafana/configs/grafana.ini:777:;token_url = https://oauth2.googleapis.com/token
+./docs/grafana/configs/grafana.ini:794:;use_refresh_token = true
+./docs/grafana/configs/grafana.ini:795:;validate_id_token = false
+./docs/grafana/configs/grafana.ini:810:;use_refresh_token = false
+./docs/grafana/configs/grafana.ini:824:;workload_identity_token_file =
+./docs/grafana/configs/grafana.ini:827:;token_url = https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/token
+./docs/grafana/configs/grafana.ini:838:;use_refresh_token = true
+./docs/grafana/configs/grafana.ini:850:;token_url = https://<tenant-id>.okta.com/oauth2/v1/token
+./docs/grafana/configs/grafana.ini:866:;use_refresh_token = true
+./docs/grafana/configs/grafana.ini:867:;validate_id_token = false
+./docs/grafana/configs/grafana.ini:889:;id_token_attribute_name =
+./docs/grafana/configs/grafana.ini:892:;token_url = https://foo.bar/login/oauth/access_token
+./docs/grafana/configs/grafana.ini:910:;use_refresh_token = false
+./docs/grafana/configs/grafana.ini:911:;validate_id_token = false
+./docs/grafana/configs/grafana.ini:931:;enable_login_token = false
+./docs/grafana/configs/grafana.ini:936:;enable_login_token = false
+./docs/grafana/configs/grafana.ini:943:;jwk_set_bearer_token_file = /path/to/token/file
+./docs/grafana/configs/grafana.ini:948:# Use in conjunction with key_file in case the JWT token's header specifies a key ID in "kid" field
+./docs/grafana/configs/grafana.ini:1046:# Custom path to token file for the Azure AD Workload Identity
+./docs/grafana/configs/grafana.ini:1047:# Allows to set a custom path to the projected service account token file
+./docs/grafana/configs/grafana.ini:1048:;workload_identity_token_file =
+./docs/grafana/configs/grafana.ini:1062:# Override token URL for Azure Active Directory
+./docs/grafana/configs/grafana.ini:1063:# By default is the same as token URL configured for AAD authentication settings
+./docs/grafana/configs/grafana.ini:1064:;user_identity_token_url =
+./docs/grafana/configs/grafana.ini:1070:# Override ADD application ID which would be used to exchange users token to an access token for the datasource
+./docs/grafana/configs/grafana.ini:1086:# Allows the usage of a custom token request assertion when Grafana is behind an authentication proxy
+./docs/grafana/configs/grafana.ini:1807:# Grafana instance - Grafana.com integration SSO API token
+./docs/grafana/configs/grafana.ini:1808:;sso_api_token = ""
+./docs/grafana/configs/grafana.ini:1899:;sas_token_expiration_days =
+./docs/grafana/configs/grafana.ini:1912:# An auth token that will be sent to and verified by the renderer. The renderer will deny any request without an auth token matching the one configured on the renderer side.
+./docs/grafana/configs/grafana.ini:1913:;renderer_token = -
+./docs/grafana/configs/grafana.ini:2165:# Token used to send requests to grafana com
+./docs/grafana/configs/grafana.ini:2166:;gcom_api_token = ""
+./.git/hooks/fsmonitor-watchman.sample:11:# The hook is passed a version (currently 2) and last update token
+./.git/hooks/fsmonitor-watchman.sample:12:# formatted as a string and outputs to stdout a new update token and
+./.git/hooks/fsmonitor-watchman.sample:13:# all files that have been modified since the update token. Paths must
+./.git/hooks/fsmonitor-watchman.sample:19:my ($version, $last_update_token) = @ARGV;
+./.git/hooks/fsmonitor-watchman.sample:22:# print STDERR "$0 $version $last_update_token\n";
+./.git/hooks/fsmonitor-watchman.sample:83:	# changed since $last_update_token but not from the .git folder.
+./.git/hooks/fsmonitor-watchman.sample:90:	if (substr($last_update_token, 0, 1) eq "c") {
+./.git/hooks/fsmonitor-watchman.sample:91:		$last_update_token = "\"$last_update_token\"";
+./.git/hooks/fsmonitor-watchman.sample:92:		$last_update_line = qq[\n"since": $last_update_token,];
+./.git/hooks/fsmonitor-watchman.sample:151:		$last_update_token = $o->{clock};
+
+===== PRIVATE KEY =====
+
+===== CERTIFICATE =====
+./docs/guacamole/configs/guaca.crt:1:-----BEGIN CERTIFICATE-----
+./docs/guacamole/configs/guaca.crt:16:-----BEGIN CERTIFICATE-----
+./docs/ca/configs/root_ca.crt:1:-----BEGIN CERTIFICATE-----
+./docs/ca/configs/intermediate_ca.crt:1:-----BEGIN CERTIFICATE-----

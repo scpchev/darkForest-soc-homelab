@@ -1,0 +1,41 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            79:5b:9e:60:e8:32:b7:c5:4a:f2:3b:eb:0e:00:bb:57
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: O=DarkForest Root CA, CN=DarkForest Root CA Intermediate CA
+        Validity
+            Not Before: Jun 15 18:39:36 2026 GMT
+            Not After : Jun 15 18:40:36 2027 GMT
+        Subject: CN=splunk.darkforest.lab
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:f7:02:9c:3c:53:85:d2:04:b3:a2:3e:40:2f:d5:
+                    27:90:e3:c5:a7:9f:63:49:38:96:5c:4b:28:8e:1f:
+                    37:a9:82:36:c7:e1:72:d6:8a:90:9b:5d:04:08:93:
+                    7f:d3:3c:f1:e2:8c:4a:8b:a1:45:69:65:46:58:56:
+                    08:ad:d2:b4:44
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Subject Key Identifier: 
+                24:DA:C7:26:EB:2B:19:09:08:6C:5E:F9:0E:B7:C3:5D:50:83:70:95
+            X509v3 Authority Key Identifier: 
+                D9:8B:B6:DB:9B:50:9A:3E:6A:1C:C8:C1:EA:95:2E:9F:8C:85:C1:76
+            X509v3 Subject Alternative Name: 
+                DNS:splunk.darkforest.lab
+            1.3.6.1.4.1.37476.9000.64.1: 
+                07.....admin.+fyX6_6_2L9AmYe56xrX9ot8la_53lzZIrX5OSRyf5Gk
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:45:02:21:00:81:ea:39:80:7a:dd:c0:14:ca:58:fa:4b:1e:
+        0d:89:64:ad:d0:f0:21:50:d7:00:82:0f:e3:af:60:3f:1a:c8:
+        ce:02:20:34:94:e9:54:a9:6f:eb:4b:43:4c:53:87:81:5a:81:
+        a5:0b:53:6f:01:b0:d3:a7:f6:36:3c:e0:3a:c4:a7:41:41

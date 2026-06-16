@@ -1,0 +1,34 @@
+ Static hostname: Gitea
+       Icon name: computer-container
+         Chassis: container ☐
+      Machine ID: d6edcdf6b38948a49218240ca63254f5
+         Boot ID: c8b996df2f5c41ef84bc3470ba843223
+  Virtualization: lxc
+Operating System: Debian GNU/Linux 13 (trixie)
+          Kernel: Linux 7.0.0-3-pve
+    Architecture: x86-64
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0@if94        UP             10.10.3.2/24 fe80::be24:11ff:fe1b:496c/64 
+  UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
+  console-getty.service     loaded active running Console Getty
+  container-getty@1.service loaded active running Container Getty on /dev/pts/1
+  container-getty@2.service loaded active running Container Getty on /dev/pts/2
+  cron.service              loaded active running Regular background program processing daemon
+  dbus.service              loaded active running D-Bus System Message Bus
+  gitea.service             loaded active running Gitea
+  mariadb.service           loaded active running MariaDB 11.8.6 database server
+  nginx.service             loaded active running A high performance web server and a reverse proxy server
+  node_exporter.service     loaded active running Node Exporter
+  postfix.service           loaded active running Postfix Mail Transport Agent (main/default instance)
+  ssh.service               loaded active running OpenBSD Secure Shell server
+  systemd-hostnamed.service loaded active running Hostname Service
+  systemd-journald.service  loaded active running Journal Service
+  systemd-logind.service    loaded active running User Login Management
+  systemd-networkd.service  loaded active running Network Configuration
+  user@0.service            loaded active running User Manager for UID 0
+
+Legend: LOAD   -> Reflects whether the unit definition was properly loaded.
+        ACTIVE -> The high-level unit activation state, i.e. generalization of SUB.
+        SUB    -> The low-level unit activation state, values depend on unit type.
+
+16 loaded units listed.

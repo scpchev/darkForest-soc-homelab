@@ -1,0 +1,13 @@
+# /etc/systemd/system/step-ca.service
+[Unit]
+Description=DarkForest Smallstep CA
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/step-ca /root/.step/config/ca.json --password-file <REDACTED_PASSWORD_FILE>
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

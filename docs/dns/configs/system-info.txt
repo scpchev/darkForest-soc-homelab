@@ -1,0 +1,69 @@
+===== HOSTNAME =====
+ Static hostname: DNS
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 945d4c1b0d0040cf93ad230b74ffe3b7
+         Boot ID: 426544b015ac48b3b5285ee98213a8fe
+  Virtualization: kvm
+Operating System: Rocky Linux 9.8 (Blue Onyx)
+     CPE OS Name: cpe:/o:rocky:rocky:9::baseos
+          Kernel: Linux 5.14.0-687.12.1.el9_8.x86_64
+    Architecture: x86-64
+ Hardware Vendor: QEMU
+  Hardware Model: Standard PC _i440FX + PIIX, 1996_
+Firmware Version: rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org
+
+===== IP =====
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+ens18            UP             10.10.2.1/24 fe80::be24:11ff:fe6c:28ed/64 
+
+===== ROUTES =====
+default via 10.10.2.254 dev ens18 proto static metric 100 
+10.10.2.0/24 dev ens18 proto kernel scope link src 10.10.2.1 metric 100 
+
+===== SERVICES =====
+  UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
+  auditd.service            loaded active running Security Auditing Service
+  chronyd.service           loaded active running NTP client/server
+  crond.service             loaded active running Command Scheduler
+  dbus-broker.service       loaded active running D-Bus System Message Bus
+  firewalld.service         loaded active running firewalld - dynamic firewall daemon
+  getty@tty1.service        loaded active running Getty on tty1
+  irqbalance.service        loaded active running irqbalance daemon
+  named.service             loaded active running Berkeley Internet Name Domain (DNS)
+  NetworkManager.service    loaded active running Network Manager
+  node_exporter.service     loaded active running Node Exporter
+  rsyslog.service           loaded active running System Logging Service
+  sshd.service              loaded active running OpenSSH server daemon
+  systemd-hostnamed.service loaded active running Hostname Service
+  systemd-journald.service  loaded active running Journal Service
+  systemd-logind.service    loaded active running User Login Management
+  systemd-udevd.service     loaded active running Rule-based Manager for Device Events and Files
+  user@1000.service         loaded active running User Manager for UID 1000
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+17 loaded units listed.
+
+===== PORTS =====
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+udp   UNCONN 0      0          10.10.2.1:53        0.0.0.0:*          
+udp   UNCONN 0      0          10.10.2.1:53        0.0.0.0:*          
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*          
+udp   UNCONN 0      0          127.0.0.1:53        0.0.0.0:*          
+udp   UNCONN 0      0          127.0.0.1:323       0.0.0.0:*          
+udp   UNCONN 0      0              [::1]:53           [::]:*          
+udp   UNCONN 0      0              [::1]:53           [::]:*          
+udp   UNCONN 0      0              [::1]:323          [::]:*          
+tcp   LISTEN 0      4096       127.0.0.1:953       0.0.0.0:*          
+tcp   LISTEN 0      128          0.0.0.0:22        0.0.0.0:*          
+tcp   LISTEN 0      10         10.10.2.1:53        0.0.0.0:*          
+tcp   LISTEN 0      10         10.10.2.1:53        0.0.0.0:*          
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*          
+tcp   LISTEN 0      10         127.0.0.1:53        0.0.0.0:*          
+tcp   LISTEN 0      10             [::1]:53           [::]:*          
+tcp   LISTEN 0      10             [::1]:53           [::]:*          
+tcp   LISTEN 0      128             [::]:22           [::]:*          
+tcp   LISTEN 0      4096               *:9100            *:*          
+tcp   LISTEN 0      4096           [::1]:953          [::]:*          

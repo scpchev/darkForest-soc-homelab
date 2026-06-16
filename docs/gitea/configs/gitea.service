@@ -1,0 +1,21 @@
+[Unit]
+Description=Gitea
+After=network.target mariadb.service
+
+[Service]
+Type=simple
+User=git
+Group=git
+WorkingDirectory=/var/lib/gitea/
+
+ExecStart=/usr/local/bin/gitea web --config /etc/gitea/app.ini
+
+Restart=always
+RestartSec=2s
+
+Environment=USER=git
+Environment=HOME=/home/git
+Environment=GITEA_WORK_DIR=/var/lib/gitea
+
+[Install]
+WantedBy=multi-user.target

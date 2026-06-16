@@ -1,0 +1,98 @@
+===== HOSTNAME =====
+ Static hostname: guacachev
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 0211be3bde594e8c8ab3bd24e971e22b
+         Boot ID: 762ba2e403cd468e8195755ecf99f7a7
+  Virtualization: kvm
+Operating System: Ubuntu 24.04.4 LTS
+          Kernel: Linux 6.8.0-124-generic
+    Architecture: x86-64
+ Hardware Vendor: QEMU
+  Hardware Model: Standard PC _i440FX + PIIX, 1996_
+Firmware Version: rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org
+   Firmware Date: Tue 2014-04-01
+    Firmware Age: 12y 2month 2w 1d
+
+===== IP =====
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+ens18            UP             10.10.1.1/24 fe80::be24:11ff:fe47:be2b/64 
+br-7367c3ddd519  UP             172.18.0.1/16 fe80::cc2c:39ff:fe8e:13c1/64 
+docker0          DOWN           172.17.0.1/16 
+vetha1d53e2@if2  UP             fe80::781a:eff:fe84:3f65/64 
+vethce39bc7@if2  UP             fe80::3451:c3ff:fef6:3f2d/64 
+vethc6b015e@if2  UP             fe80::b453:3ff:fed9:af2e/64 
+
+===== ROUTES =====
+default via 10.10.1.254 dev ens18 proto static 
+10.10.1.0/24 dev ens18 proto kernel scope link src 10.10.1.1 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+172.18.0.0/16 dev br-7367c3ddd519 proto kernel scope link src 172.18.0.1 
+
+===== DISKS =====
+NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda                         8:0    0   32G  0 disk 
+├─sda1                      8:1    0    1M  0 part 
+├─sda2                      8:2    0    2G  0 part /boot
+└─sda3                      8:3    0   30G  0 part 
+  └─ubuntu--vg-ubuntu--lv 252:0    0   15G  0 lvm  /
+sr0                        11:0    1  3,2G  0 rom  
+
+===== FILESYSTEMS =====
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              197M  1,3M  196M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv   15G  8,3G  5,7G  60% /
+tmpfs                              984M     0  984M   0% /dev/shm
+tmpfs                              5,0M     0  5,0M   0% /run/lock
+/dev/sda2                          2,0G  200M  1,6G  11% /boot
+tmpfs                              197M   12K  197M   1% /run/user/1000
+
+===== RUNNING SERVICES =====
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  chrony.service              loaded active running chrony, an NTP client/server
+  containerd.service          loaded active running containerd container runtime
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  docker.service              loaded active running Docker Application Container Engine
+  getty@tty1.service          loaded active running Getty on tty1
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  nginx.service               loaded active running A high performance web server and a reverse proxy server
+  node_exporter.service       loaded active running Node Exporter
+  polkit.service              loaded active running Authorization Manager
+  rsyslog.service             loaded active running System Logging Service
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-hostnamed.service   loaded active running Hostname Service
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  upower.service              loaded active running Daemon for power management
+  user@1000.service           loaded active running User Manager for UID 1000
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+23 loaded units listed.
+
+===== LISTEN PORTS =====
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*          
+udp   UNCONN 0      0      127.0.0.53%lo:53         0.0.0.0:*          
+udp   UNCONN 0      0          127.0.0.1:323        0.0.0.0:*          
+udp   UNCONN 0      0              [::1]:323           [::]:*          
+tcp   LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          
+tcp   LISTEN 0      511          0.0.0.0:8082       0.0.0.0:*          
+tcp   LISTEN 0      4096         0.0.0.0:8080       0.0.0.0:*          
+tcp   LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*          
+tcp   LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*          
+tcp   LISTEN 0      4096       127.0.0.1:33411      0.0.0.0:*          
+tcp   LISTEN 0      511          0.0.0.0:8443       0.0.0.0:*          
+tcp   LISTEN 0      511          0.0.0.0:443        0.0.0.0:*          
+tcp   LISTEN 0      4096            [::]:8080          [::]:*          
+tcp   LISTEN 0      4096               *:9100             *:*          
+tcp   LISTEN 0      4096            [::]:22            [::]:*          

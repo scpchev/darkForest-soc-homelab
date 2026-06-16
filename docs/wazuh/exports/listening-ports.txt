@@ -1,0 +1,13 @@
+Netid State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0               127.0.0.1:323        0.0.0.0:*          
+udp   UNCONN 0      0                   [::1]:323           [::]:*          
+tcp   LISTEN 0      128               0.0.0.0:1514       0.0.0.0:*          
+tcp   LISTEN 0      128               0.0.0.0:1515       0.0.0.0:*          
+tcp   LISTEN 0      2048              0.0.0.0:55000      0.0.0.0:*          
+tcp   LISTEN 0      511               0.0.0.0:443        0.0.0.0:*          
+tcp   LISTEN 0      128               0.0.0.0:22         0.0.0.0:*          
+tcp   LISTEN 0      4096   [::ffff:127.0.0.1]:9300             *:*          
+tcp   LISTEN 0      2048                 [::]:55000         [::]:*          
+tcp   LISTEN 0      4096   [::ffff:127.0.0.1]:9200             *:*          
+tcp   LISTEN 0      128                  [::]:22            [::]:*          
+tcp   LISTEN 0      4096                    *:9100             *:*          

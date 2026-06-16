@@ -1,0 +1,22 @@
+$TTL 86400
+
+@       IN      SOA     dns.darkforest.lab. admin.darkforest.lab. (
+                        2026062202
+                        3600
+                        1800
+                        604800
+                        86400 )
+
+        IN      NS      dns.darkforest.lab.
+
+dns     IN      A       10.10.2.1
+guaca   IN      A       10.10.1.1
+grafana IN      A       10.10.1.2
+prmths  IN      A       10.10.1.3
+ntp     IN      A       10.10.2.2
+ca      IN      A       10.10.2.3
+wiki    IN      A       10.10.3.1
+gitea   IN      A       10.10.3.2
+404jun  IN      A       10.10.3.9
+wazuh   IN      A       10.10.5.1
+splunk  IN      A       10.10.5.2

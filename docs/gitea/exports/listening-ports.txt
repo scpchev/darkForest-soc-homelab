@@ -1,0 +1,10 @@
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                                            
+tcp   LISTEN 0      511          0.0.0.0:443       0.0.0.0:*    users:(("nginx",pid=10889,fd=7),("nginx",pid=10888,fd=7),("nginx",pid=10063,fd=7))
+tcp   LISTEN 0      511          0.0.0.0:80        0.0.0.0:*    users:(("nginx",pid=10889,fd=5),("nginx",pid=10888,fd=5),("nginx",pid=10063,fd=5))
+tcp   LISTEN 0      100        127.0.0.1:25        0.0.0.0:*    users:(("master",pid=3608,fd=13))                                                 
+tcp   LISTEN 0      80         127.0.0.1:3306      0.0.0.0:*    users:(("mariadbd",pid=4761,fd=28))                                               
+tcp   LISTEN 0      4096               *:9100            *:*    users:(("node_exporter",pid=11739,fd=3))                                          
+tcp   LISTEN 0      100            [::1]:25           [::]:*    users:(("master",pid=3608,fd=14))                                                 
+tcp   LISTEN 0      4096               *:3000            *:*    users:(("gitea",pid=5061,fd=9))                                                   
+tcp   LISTEN 0      4096               *:22              *:*    users:(("sshd",pid=3379,fd=3))                                                    
+tcp   LISTEN 0      511             [::]:80           [::]:*    users:(("nginx",pid=10889,fd=6),("nginx",pid=10888,fd=6),("nginx",pid=10063,fd=6))

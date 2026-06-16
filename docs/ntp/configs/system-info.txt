@@ -1,0 +1,83 @@
+===== HOSTNAME =====
+ Static hostname: NTP
+       Icon name: computer-container
+         Chassis: container ☐
+      Machine ID: dd915162cd2940ec88b0ccc664bc7846
+         Boot ID: 2a070dc567ad4cc5a98a4fa7d592ea72
+  Virtualization: lxc
+Operating System: Debian GNU/Linux 13 (trixie)
+          Kernel: Linux 7.0.0-3-pve
+    Architecture: x86-64
+
+===== IP =====
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0@if70        UP             10.10.2.2/24 fe80::be24:11ff:fe19:71dc/64 
+
+===== ROUTES =====
+default via 10.10.2.254 dev eth0 proto kernel onlink 
+10.10.2.0/24 dev eth0 proto kernel scope link src 10.10.2.2 
+
+===== SERVICES =====
+  UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
+  chrony.service            loaded active running chrony, an NTP client/server
+  console-getty.service     loaded active running Console Getty
+  container-getty@1.service loaded active running Container Getty on /dev/tty1
+  container-getty@2.service loaded active running Container Getty on /dev/tty2
+  cron.service              loaded active running Regular background program processing daemon
+  dbus.service              loaded active running D-Bus System Message Bus
+  node_exporter.service     loaded active running Prometheus Node Exporter
+  postfix.service           loaded active running Postfix Mail Transport Agent (main/default instance)
+  ssh.service               loaded active running OpenBSD Secure Shell server
+  systemd-hostnamed.service loaded active running Hostname Service
+  systemd-journald.service  loaded active running Journal Service
+  systemd-logind.service    loaded active running User Login Management
+  systemd-networkd.service  loaded active running Network Configuration
+  user@0.service            loaded active running User Manager for UID 0
+
+Legend: LOAD   -> Reflects whether the unit definition was properly loaded.
+        ACTIVE -> The high-level unit activation state, i.e. generalization of SUB.
+        SUB    -> The low-level unit activation state, values depend on unit type.
+
+14 loaded units listed.
+
+===== PORTS =====
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                               
+udp   UNCONN 0      0            0.0.0.0:123       0.0.0.0:*    users:(("chronyd",pid=886,fd=7))                     
+udp   UNCONN 0      0          127.0.0.1:323       0.0.0.0:*    users:(("chronyd",pid=886,fd=5))                     
+udp   UNCONN 0      0              [::1]:323          [::]:*    users:(("chronyd",pid=886,fd=6))                     
+tcp   LISTEN 0      100        127.0.0.1:25        0.0.0.0:*    users:(("master",pid=335,fd=13))                     
+tcp   LISTEN 0      4096               *:22              *:*    users:(("sshd",pid=367,fd=3),("systemd",pid=1,fd=63))
+tcp   LISTEN 0      100            [::1]:25           [::]:*    users:(("master",pid=335,fd=14))                     
+tcp   LISTEN 0      4096               *:9100            *:*    users:(("node_exporter",pid=1343,fd=3))              
+
+===== TRACKING =====
+Reference ID    : 2D574C03 (ntp.devrandom.be)
+Stratum         : 3
+Ref time (UTC)  : Tue Jun 16 11:53:59 2026
+System time     : 0.000148836 seconds fast of NTP time
+Last offset     : +0.000159803 seconds
+RMS offset      : 0.000249388 seconds
+Frequency       : 0.012 ppm slow
+Residual freq   : +0.017 ppm
+Skew            : 0.115 ppm
+Root delay      : 0.010596683 seconds
+Root dispersion : 0.001460913 seconds
+Update interval : 1033.1 seconds
+Leap status     : Normal
+
+===== SOURCES =====
+
+  .-- Source mode  '^' = server, '=' = peer, '#' = local clock.
+ / .- Source state '*' = current best, '+' = combined, '-' = not combined,
+| /             'x' = may be in error, '~' = too variable, '?' = unusable.
+||                                                 .- xxxx [ yyyy ] +/- zzzz
+||      Reachability register (octal) -.           |  xxxx = adjusted offset,
+||      Log2(Polling interval) --.      |          |  yyyy = measured offset,
+||                                \     |          |  zzzz = estimated error.
+||                                 |    |           \
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^+ ntp01.pingless.com            2  10   377   344   -160us[ -160us] +/-   12ms
+^+ time.cloudflare.com           3  10   377   781  +1208us[+1208us] +/-   11ms
+^+ meron.soleus.nu               3  10   377   779   -131us[ -131us] +/- 6899us
+^* ntp.devrandom.be              2  10   377  1000    +55us[ +214us] +/- 5512us

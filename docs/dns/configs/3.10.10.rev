@@ -1,0 +1,14 @@
+$TTL 86400
+
+@       IN      SOA     dns.darkforest.lab. admin.darkforest.lab. (
+                        2026062101
+                        3600
+                        1800
+                        604800
+                        86400 )
+
+        IN      NS      dns.darkforest.lab.
+
+1       IN      PTR     wiki.darkforest.lab.
+2       IN      PTR     gitea.darkforest.lab.
+9       IN      PTR     404jun.darkforest.lab.

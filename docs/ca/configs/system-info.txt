@@ -1,0 +1,85 @@
+===== HOSTNAME =====
+ Static hostname: CA
+       Icon name: computer-container
+         Chassis: container ☐
+      Machine ID: 3ed34024d5c448979008187aff393f3a
+         Boot ID: 2f566d311f0e4de2be970ca9aa16bb60
+  Virtualization: lxc
+Operating System: Debian GNU/Linux 13 (trixie)
+          Kernel: Linux 7.0.0-3-pve
+    Architecture: x86-64
+
+===== IP =====
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0@if106       UP             10.10.2.3/24 fe80::be24:11ff:fe58:3768/64 
+
+===== ROUTES =====
+default via 10.10.2.254 dev eth0 proto kernel onlink 
+10.10.2.0/24 dev eth0 proto kernel scope link src 10.10.2.3 
+
+===== SERVICES =====
+  UNIT                      LOAD   ACTIVE SUB     DESCRIPTION
+  console-getty.service     loaded active running Console Getty
+  container-getty@1.service loaded active running Container Getty on /dev/tty1
+  container-getty@2.service loaded active running Container Getty on /dev/tty2
+  cron.service              loaded active running Regular background program processing daemon
+  dbus.service              loaded active running D-Bus System Message Bus
+  node_exporter.service     loaded active running Node Exporter
+  postfix.service           loaded active running Postfix Mail Transport Agent (main/default instance)
+  ssh.service               loaded active running OpenBSD Secure Shell server
+  step-ca.service           loaded active running DarkForest Smallstep CA
+  systemd-hostnamed.service loaded active running Hostname Service
+  systemd-journald.service  loaded active running Journal Service
+  systemd-logind.service    loaded active running User Login Management
+  systemd-networkd.service  loaded active running Network Configuration
+  user@0.service            loaded active running User Manager for UID 0
+
+Legend: LOAD   -> Reflects whether the unit definition was properly loaded.
+        ACTIVE -> The high-level unit activation state, i.e. generalization of SUB.
+        SUB    -> The low-level unit activation state, values depend on unit type.
+
+14 loaded units listed.
+
+===== PORTS =====
+Netid State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                                
+tcp   LISTEN 0      100        127.0.0.1:25        0.0.0.0:*    users:(("master",pid=263,fd=13))                      
+tcp   LISTEN 0      100            [::1]:25           [::]:*    users:(("master",pid=263,fd=14))                      
+tcp   LISTEN 0      4096               *:9100            *:*    users:(("node_exporter",pid=2131,fd=3))               
+tcp   LISTEN 0      4096               *:22              *:*    users:(("sshd",pid=112,fd=3),("systemd",pid=1,fd=116))
+tcp   LISTEN 0      4096               *:443             *:*    users:(("step-ca",pid=1564,fd=10))                    
+
+===== STEP PATH =====
+/root/.step
+
+===== PROVISIONERS =====
+[
+   {
+      "type": "JWK",
+      "name": "admin",
+      "key": {
+         "use": "sig",
+         "kty": "EC",
+         "kid": "fyX6_6_2L9AmYe56xrX9ot8la_53lzZIrX5OSRyf5Gk",
+         "crv": "P-256",
+         "alg": "ES256",
+         "x": "-GhKxnbNqGD3PA7wEclPBuVIN69WuQOnhR7hBGnGU-U",
+         "y": "7ZdCccE1sP31Hj2RuBXPVDBUot6nh-T94B8TVSsxN94"
+      },
+      "encryptedKey": "eyJhbGciOiJQQkVTMi1IUzI1NitBMTI4S1ciLCJjdHkiOiJqd2sranNvbiIsImVuYyI6IkEyNTZHQ00iLCJwMmMiOjYwMDAwMCwicDJzIjoiaGJva3c2MlU1SHduOVRiMFFwN1UwdyJ9.M1db30cdzIWbZb0JZIYENgMaiDSFzMDFSgCKBA-gqTWKbqTv8clQfw.xZDY3W2JsoKOSN6J.zg4yNxLtfR_lHJwpW3lNbmaO3nzXpbJoFrlySyK2BtjidhFnu5ESrZqA5ZN0t3-56kEP2ENBa0uv3q7oW8kjON9g-bf5BSOtyudcyhEUE5IZxQghz8NY51LDLpX1WN5-lYN_2Tod1CMbjS-Y2LTQKNdAGObfgyyDkgv8Dk1J6JXfZgxo4t59O5GS0sic6ejvLXpjbxDZOV76YH1TP2kupR0E48VkC-wMpPQRumLeqm5YG3XeyTdpvKSK10TuiJ4BiCUQm7dHDrGhyVNqOWWgXGD61kwVxn8wFEOZI7CzuNVJEgO9MJ7O-xBq3-bmlkQYRspoS4_fegr3-Bs2rRY.x2_4_Giqya9pEPi6rzuXlQ",
+      "claims": {
+         "maxTLSCertDuration": "8760h0m0s",
+         "defaultTLSCertDuration": "8760h0m0s",
+         "enableSSHCA": false,
+         "disableRenewal": false,
+         "allowRenewalAfterExpiry": false,
+         "disableSmallstepExtensions": false
+      },
+      "options": {
+         "x509": {},
+         "ssh": {}
+      }
+   }
+]
+
+===== STEP HEALTH =====
+ok
