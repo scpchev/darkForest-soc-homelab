@@ -1,4 +1,4 @@
-# DarkForest v2 Private
+# DarkForest v2
 
 Source of truth for the DarkForest infrastructure.
 
