@@ -37,16 +37,20 @@ DarkForest was built to:
 The infrastructure is segmented into four logical network zones.
 
 ```text
-                    DarkForest Lab
+                                                       DarkForest Lab
 
-                           pfSense
-                              │
- ┌───────────────┬────────────┼────────────┬───────────────┐
- │               │            │            │
- ▼               ▼            ▼            ▼
+                                         pfSense
+                                            │
+ ┌────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬
+ │                │                │                │                │                │
+ ▼                ▼                ▼                ▼                ▼                ▼
 
-Management   Infrastructure  Services   Security
-10.10.1.0    10.10.2.0       10.10.3.0  10.10.5.0
+ Management    Infrastructure    Services        Clients        Security       AttackLab
+ 10.10.1.0      10.10.2.0       10.10.3.0       10.10.4.0      10.10.5.0      10.10.6.0
+
+ Guacamole      DNS             Gitea           Windows 11      Wazuh          DC1
+ Grafana        NTP             BookStack       Debian Client   Splunk         Windows 11
+ Prometheus     CA              404jun                          SIEM           Ubuntu 24.04
 ```
 
 Segmentation is currently implemented through dedicated pfSense interfaces rather than 802.1Q VLAN tagging.
