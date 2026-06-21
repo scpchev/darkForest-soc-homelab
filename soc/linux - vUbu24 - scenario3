@@ -1,0 +1,187 @@
+## Scenario 003 - Privilege Escalation and Persistence Through Sudo Group Membership
+
+### Objective
+
+Simulate an attacker who already has administrative access on a Linux host and establishes persistence by creating multiple privileged accounts.
+
+The objective is to generate observable events related to account creation, privilege assignment, and persistence mechanisms.
+
+---
+
+### MITRE ATT&CK Mapping
+
+| Technique                         | ID    |
+| --------------------------------- | ----- |
+| Create Account                    | T1136 |
+| Account Manipulation              | T1098 |
+| Valid Accounts                    | T1078 |
+| Abuse Elevation Control Mechanism | T1548 |
+
+---
+
+### Environment
+
+| Host     | IP        | Role         |
+| -------- | --------- | ------------ |
+| Ubuntu24 | 10.10.6.3 | Linux Target |
+| Splunk   | 10.10.5.X | SIEM         |
+
+---
+
+### Initial Situation
+
+The account:
+
+```text
+karen
+```
+
+already possessed administrative privileges through sudo.
+
+An attacker operating under this account attempted to establish long-term persistence by creating additional privileged users.
+
+---
+
+### Account Creation
+
+Ten local accounts were created.
+
+```text
+margit
+godrick
+rennala
+radahn
+rykard
+morgott
+mohg
+malenia
+maliketh
+godfrey
+```
+
+Commands executed:
+
+```bash
+sudo adduser margit
+sudo adduser godrick
+sudo adduser rennala
+sudo adduser radahn
+sudo adduser rykard
+sudo adduser morgott
+sudo adduser mohg
+sudo adduser malenia
+sudo adduser maliketh
+sudo adduser godfrey
+```
+
+---
+
+### Privilege Assignment
+
+Each account was granted administrative privileges.
+
+```bash
+sudo usermod -aG sudo margit
+sudo usermod -aG sudo godrick
+sudo usermod -aG sudo rennala
+sudo usermod -aG sudo radahn
+sudo usermod -aG sudo rykard
+sudo usermod -aG sudo morgott
+sudo usermod -aG sudo mohg
+sudo usermod -aG sudo malenia
+sudo usermod -aG sudo maliketh
+sudo usermod -aG sudo godfrey
+```
+
+---
+
+### Attack Flow
+
+```text
+Attacker (karen)
+        │
+        ▼
+sudo adduser
+        │
+        ▼
+Local Accounts Created
+        │
+        ▼
+sudo usermod -aG sudo
+        │
+        ▼
+Administrative Privileges Granted
+        │
+        ▼
+Persistence Established
+```
+
+---
+
+### Log Source
+
+```text
+Ubuntu24
+└── /var/log/auth.log
+        │
+        ▼
+Splunk Universal Forwarder
+        │
+        ▼
+Index: linux
+        │
+        ▼
+Linux Monitoring Dashboard
+```
+
+---
+
+### Splunk Detection
+
+Account creation:
+
+```spl
+index=linux host=vUbu24 sourcetype=linux_auth "adduser"
+```
+
+Privilege assignment:
+
+```spl
+index=linux host=vUbu24 sourcetype=linux_auth "usermod"
+```
+
+All privileged activity:
+
+```spl
+index=linux host=vUbu24 sourcetype=linux_auth "COMMAND="
+| rex "COMMAND=(?<command>.*)"
+```
+
+---
+
+### Expected Indicators
+
+Examples of observable events:
+
+```text
+COMMAND=/usr/sbin/adduser margit
+COMMAND=/usr/sbin/adduser godrick
+COMMAND=/usr/sbin/adduser rennala
+
+COMMAND=/usr/sbin/usermod -aG sudo margit
+COMMAND=/usr/sbin/usermod -aG sudo godrick
+COMMAND=/usr/sbin/usermod -aG sudo rennala
+```
+
+---
+
+### Detection Outcome
+
+The activity generated clear evidence of:
+
+* Local account creation
+* Administrative group modification
+* Privileged command execution
+* Persistence establishment
+
+These actions were successfully ingested and visualized through the Linux Monitoring Dashboard in Splunk.
