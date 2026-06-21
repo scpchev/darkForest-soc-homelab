@@ -1,0 +1,185 @@
+<dashboard version="1.1" theme="light">
+  <label>darkForest - Linux Monitoring - vUbu24</label>
+  <row>
+    <panel>
+      <single>
+        <title>Total Events</title>
+        <search>
+          <query>index=linux host=vUbu24
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Failed SSH Logins</title>
+        <search>
+          <query>index=linux sourcetype=linux_auth "Failed password"
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Successfull SSH Logins</title>
+        <search>
+          <query>index=linux sourcetype=linux_auth "Accepted password"
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>sudo Commands</title>
+        <search>
+          <query>index=linux sourcetype=linux_auth sudo
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Successfull SSH</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth "Accepted password"
+| timechart span=15m count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Failed SSH</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth "Failed password"
+| timechart span=15m count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Top Users</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth "Accepted password"
+| rex "for (?&lt;user&gt;\S+)"
+| top limit=10 user</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Top IPs</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth
+| rex "from (?&lt;src_ip&gt;\d+\.\d+\.\d+\.\d+)"
+| top limit=10 src_ip</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Targeted Accounts</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth "Failed password"
+| rex "for (invalid user )?(?&lt;user&gt;\S+)"
+| top limit=10 user</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Attacking IPs</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth "Failed password"
+| rex "from (?&lt;src_ip&gt;\d+\.\d+\.\d+\.\d+)"
+| top limit=10 src_ip</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Events by Sources</title>
+        <search>
+          <query>index=linux host=vUbu24
+| timechart span=15m count by sourcetype</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Privileged Activities</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth sudo
+| timechart span=15m count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Latest Events</title>
+        <search>
+          <query>index=linux host=vUbu24 sourcetype=linux_auth
+("Failed password" OR "Accepted password" OR sudo)
+| table _time host _raw
+| head 20</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

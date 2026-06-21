@@ -1,0 +1,206 @@
+<dashboard version="1.1" theme="light">
+  <label>darkForest - Active Directory Monitoring - DC1</label>
+  <row>
+    <panel>
+      <single>
+        <title>Total Events</title>
+        <search>
+          <query>index=ad host=DC1
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="rangeColors">["0x53a051","0x0877a6","0xf8be34","0xf1813f","0xdc4e41"]</option>
+        <option name="trellis.enabled">0</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Successfull Logons</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4624
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Failed Logons</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4625
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Privileged Modifications</title>
+        <search>
+          <query>index=ad host=DC1 (EventCode=4720 OR EventCode=4732)
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Locked Accounts</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4740
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Authentication Activities</title>
+      <chart>
+        <title>Success</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4624
+| timechart span=15m count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Authentication Activities</title>
+      <chart>
+        <title>Failed</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4625
+| timechart span=15m count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Top Users</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4624
+| top limit=10 Account_Name</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Top IPs</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4624
+| top limit=10 Source_Network_Address</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Targeted Accounts</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4625
+| top limit=10 Account_Name</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Attacking IPs</title>
+        <search>
+          <query>index=ad host=DC1 EventCode=4625
+| top limit=10 Source_Network_Address</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Security Events Timeline</title>
+        <search>
+          <query>index=ad host=DC1
+(EventCode=4625 OR EventCode=4740 OR EventCode=4720 OR EventCode=4732)
+| eval EventType=case(
+EventCode=4625,"Failed Logon",
+EventCode=4740,"Account Lockout",
+EventCode=4720,"User Created",
+EventCode=4732,"Admin Group Change")
+| timechart span=15m count by EventType</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">area</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Logs by Sources</title>
+        <search>
+          <query>index=ad host=DC1
+| stats count by source</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Last Critical Events</title>
+        <search>
+          <query>index=ad host=DC1
+(EventCode=4625 OR EventCode=4740 OR EventCode=4720 OR EventCode=4732)
+| table _time EventCode Account_Name Source_Network_Address
+| head 20</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

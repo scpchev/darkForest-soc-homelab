@@ -1,0 +1,114 @@
+<dashboard version="1.1" theme="light">
+  <label>darkForest - Windows11</label>
+  <row>
+    <panel>
+      <single>
+        <title>Security Events</title>
+        <search>
+          <query>index=windows host=vW11 source="WinEventLog:Security"
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>System Events</title>
+        <search>
+          <query>index=windows host=vW11 source="WinEventLog:System"
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+    <panel>
+      <single>
+        <title>Application Events</title>
+        <search>
+          <query>index=windows host=vW11 source="WinEventLog:Application"
+| stats count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Events by Time</title>
+        <search>
+          <query>index=windows host=vW11
+| timechart span=15m count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>Events by Sources</title>
+        <search>
+          <query>index=windows host=vW11
+| stats count by source</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Top events IDs</title>
+        <search>
+          <query>index=windows host=vW11
+| top EventCode limit=10</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Top Sources</title>
+        <search>
+          <query>index=windows host=vW11
+| top source limit=10</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Latest Events</title>
+        <search>
+          <query>index=windows host=vW11
+| table _time source EventCode Message
+| sort -_time</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>
