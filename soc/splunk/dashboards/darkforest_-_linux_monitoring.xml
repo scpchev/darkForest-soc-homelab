@@ -81,60 +81,59 @@
   <row>
     <panel>
       <chart>
-        <title>Top Users</title>
+        <title>Top sudo Commands</title>
         <search>
-          <query>index=linux host=vUbu24 sourcetype=linux_auth "Accepted password"
-| rex "for (?&lt;user&gt;\S+)"
-| top limit=10 user</query>
+          <query>index=linux sourcetype=linux_auth "sudo:"
+| rex "COMMAND=(?&lt;command&gt;.*)"
+| stats count by command
+| sort -count
+| head 10</query>
           <earliest>-24h@h</earliest>
           <latest>now</latest>
         </search>
-        <option name="charting.chart">column</option>
+        <option name="charting.chart">bar</option>
         <option name="charting.drilldown">none</option>
       </chart>
     </panel>
     <panel>
       <chart>
-        <title>Top IPs</title>
+        <title>SSH Source IPs</title>
+        <search>
+          <query>index=linux sourcetype=linux_auth
+("Accepted password" OR "Failed password")
+| rex "from (?&lt;src_ip&gt;\d+\.\d+\.\d+\.\d+)"
+| stats count by src_ip
+| sort - count</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>SSH Success vs Failure by IP</title>
         <search>
           <query>index=linux host=vUbu24 sourcetype=linux_auth
+("Accepted password" OR "Failed password")
 | rex "from (?&lt;src_ip&gt;\d+\.\d+\.\d+\.\d+)"
-| top limit=10 src_ip</query>
+| eval result=if(searchmatch("Accepted password"),"Success","Failure")
+| stats count by src_ip result</query>
           <earliest>-24h@h</earliest>
           <latest>now</latest>
+          <refresh>30s</refresh>
+          <refreshType>delay</refreshType>
         </search>
+        <option name="charting.axisTitleX.text">ip Failed | ip Success</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
         <option name="charting.chart">column</option>
+        <option name="charting.chart.showDataLabels">all</option>
+        <option name="charting.chart.stackMode">default</option>
         <option name="charting.drilldown">none</option>
-      </chart>
-    </panel>
-  </row>
-  <row>
-    <panel>
-      <chart>
-        <title>Targeted Accounts</title>
-        <search>
-          <query>index=linux host=vUbu24 sourcetype=linux_auth "Failed password"
-| rex "for (invalid user )?(?&lt;user&gt;\S+)"
-| top limit=10 user</query>
-          <earliest>-24h@h</earliest>
-          <latest>now</latest>
-        </search>
-        <option name="charting.chart">column</option>
-        <option name="charting.drilldown">none</option>
-      </chart>
-    </panel>
-    <panel>
-      <chart>
-        <title>Attacking IPs</title>
-        <search>
-          <query>index=linux host=vUbu24 sourcetype=linux_auth "Failed password"
-| rex "from (?&lt;src_ip&gt;\d+\.\d+\.\d+\.\d+)"
-| top limit=10 src_ip</query>
-          <earliest>-24h@h</earliest>
-          <latest>now</latest>
-        </search>
-        <option name="charting.chart">column</option>
-        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="refresh.display">progressbar</option>
       </chart>
     </panel>
   </row>
@@ -143,8 +142,13 @@
       <chart>
         <title>Events by Sources</title>
         <search>
-          <query>index=linux host=vUbu24
-| timechart span=15m count by sourcetype</query>
+          <query>index=linux
+| eval category=case(
+sourcetype="linux_auth","Authentication",
+sourcetype="linux_syslog","System",
+1=1,"Other"
+)
+| stats count by category</query>
           <earliest>-24h@h</earliest>
           <latest>now</latest>
         </search>
@@ -154,15 +158,24 @@
     </panel>
     <panel>
       <chart>
-        <title>Privileged Activities</title>
+        <title>Attack Timeline</title>
         <search>
-          <query>index=linux host=vUbu24 sourcetype=linux_auth sudo
-| timechart span=15m count</query>
+          <query>index=linux sourcetype=linux_auth
+("Failed password" OR "Accepted password" OR "sudo:")
+| eval activity=case(
+searchmatch("Failed password"),"SSH Failed",
+searchmatch("Accepted password"),"SSH Success",
+searchmatch("sudo:"),"SUDO"
+)
+| timechart span=15m count by activity</query>
           <earliest>-24h@h</earliest>
           <latest>now</latest>
+          <refresh>30s</refresh>
+          <refreshType>delay</refreshType>
         </search>
-        <option name="charting.chart">line</option>
+        <option name="charting.chart">area</option>
         <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
       </chart>
     </panel>
   </row>
@@ -177,8 +190,11 @@
 | head 20</query>
           <earliest>-24h@h</earliest>
           <latest>now</latest>
+          <refresh>30s</refresh>
+          <refreshType>delay</refreshType>
         </search>
         <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
       </table>
     </panel>
   </row>
