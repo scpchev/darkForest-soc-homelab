@@ -1,5 +1,3 @@
----
-
 # Scenario 001 - SSH Brute Force Detection
 
 ## Objective
@@ -11,8 +9,7 @@ Validate the complete DarkForest SOC detection chain by generating a controlled 
 ## Attack Path
 
 ```text
-Attacker VM
-(Debian 13 + Exegol)
+Debian 13 + Exegol
         │
         ▼
 Ubuntu24 SSH Service
@@ -25,7 +22,8 @@ Ubuntu24 SSH Service
 Splunk Universal Forwarder
         │
         ▼
-Splunk Index: linux
+Splunk Enterprise
+(Index: linux)
         │
         ▼
 Linux Monitoring Dashboard
@@ -37,26 +35,26 @@ Linux Monitoring Dashboard
 
 ### Attacker
 
-| Host     | IP        |
-| -------- | --------- |
+| Host | IP Address |
+|--------|--------|
 | Debian13 | 10.10.4.1 |
 
 ### Victim
 
-| Host   | IP        |
-| ------ | --------- |
+| Host | IP Address |
+|--------|--------|
 | vUbu24 | 10.10.6.3 |
 
 ### Monitoring
 
-| Component           | Host   |
-| ------------------- | ------ |
-| Splunk Enterprise   | Splunk |
-| Universal Forwarder | vUbu24 |
+| Component | Host |
+|------------|---------|
+| Splunk Enterprise | Splunk |
+| Splunk Universal Forwarder | vUbu24 |
 
 ---
 
-## Validation of Connectivity
+## Connectivity Validation
 
 From Exegol:
 
@@ -76,7 +74,7 @@ Result:
 
 ## Exegol Deployment
 
-Install image:
+Install Exegol image:
 
 ```bash
 exegol install free
@@ -94,7 +92,7 @@ Open shell:
 exegol shell darkforest
 ```
 
-Verification:
+Verify tooling:
 
 ```bash
 which hydra
@@ -107,10 +105,10 @@ which bloodhound-python
 
 ## Password Dictionary
 
-File:
+Create dictionary:
 
-```text
-passwords.txt
+```bash
+cat > passwords.txt
 ```
 
 Content:
@@ -130,7 +128,7 @@ Jean
 Jean1998/
 ```
 
-Verification:
+Verify:
 
 ```bash
 cat passwords.txt
@@ -140,13 +138,13 @@ cat passwords.txt
 
 ## Attack Execution
 
-Hydra SSH dictionary attack:
+Launch Hydra SSH password attack:
 
 ```bash
 hydra -l karen -P passwords.txt ssh://10.10.6.3
 ```
 
-Result:
+Hydra output:
 
 ```text
 [22][ssh] host: 10.10.6.3
@@ -154,7 +152,7 @@ login: karen
 password: Emma2008!
 ```
 
-Hydra successfully identified a valid credential for the target account.
+A valid credential was successfully identified for the target account.
 
 ---
 
@@ -162,7 +160,7 @@ Hydra successfully identified a valid credential for the target account.
 
 ### Failed Authentication Events
 
-Examples:
+Example:
 
 ```text
 Failed password for karen from 10.10.4.1
@@ -180,7 +178,7 @@ Accepted password for karen from 10.10.4.1
 
 ## Splunk Data Source
 
-Forwarded file:
+Forwarded log:
 
 ```text
 /var/log/auth.log
@@ -197,9 +195,9 @@ sourcetype = linux_auth
 
 ---
 
-## Splunk Dashboard Validation
+## Dashboard Validation
 
-The following dashboard panels successfully detected the activity:
+The following Linux dashboard panels successfully detected the attack activity.
 
 ### Failed SSH Logins
 
@@ -211,7 +209,7 @@ Detected successful authentication after password discovery.
 
 ### Attacking IPs
 
-Displayed attacker source:
+Identified attacker source:
 
 ```text
 10.10.4.1
@@ -230,29 +228,45 @@ Accepted password
 
 ### Latest Events
 
-Displayed raw authentication events from auth.log.
+Displayed raw authentication events collected from `auth.log`.
 
 ---
 
 ## MITRE ATT&CK Mapping
 
-| Technique         | ID        |
-| ----------------- | --------- |
-| Brute Force       | T1110     |
+| Technique | ID |
+|------------|------------|
+| Brute Force | T1110 |
 | Password Guessing | T1110.001 |
-| Valid Accounts    | T1078     |
+| Valid Accounts | T1078 |
 
 ---
 
-## Outcome
+## Detection Outcome
+
+- ✅ Exegol operational
+- ✅ SSH password attack executed
+- ✅ Linux telemetry collected
+- ✅ Splunk ingestion validated
+- ✅ Dashboard detection validated
+- ✅ End-to-end SOC workflow confirmed
+
+---
+
+## Key Takeaway
+
+This scenario represents the first complete **Attack → Detection → Investigation** workflow implemented in the DarkForest SOC lab.
 
 ```text
-✓ Exegol operational
-✓ SSH brute force attack executed
-✓ Linux telemetry collected
-✓ Splunk ingestion validated
-✓ Dashboard detection validated
-✓ End-to-end SOC workflow confirmed
+Exegol
+    ↓
+SSH Attack
+    ↓
+Ubuntu24
+    ↓
+auth.log
+    ↓
+Splunk
+    ↓
+Detection & Investigation
 ```
-
-This scenario represents the first complete Attack → Detection → Investigation workflow implemented in the DarkForest SOC lab.
