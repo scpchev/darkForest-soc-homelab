@@ -1,0 +1,321 @@
+# Scenario 002 - Administrative Activity Monitoring
+
+## Overview
+
+This scenario validates the DarkForest SOC's ability to detect and classify privileged Linux activity performed by an authorized administrator.
+
+Unlike a privilege escalation scenario, the objective is to generate legitimate administrative actions and verify their visibility within Splunk.
+
+### Objectives
+
+* Generate privileged Linux activity through `sudo`
+* Validate collection of administrative actions
+* Detect sensitive file access
+* Detect account creation activity
+* Detect privilege assignment events
+* Validate dashboard visibility and investigation workflows
+
+---
+
+## Scenario Information
+
+| Category           | Value                              |
+| ------------------ | ---------------------------------- |
+| Scenario ID        | DF-LNX-002                         |
+| Technique          | Administrative Activity Monitoring |
+| User               | karen                              |
+| Target             | vUbu24 (10.10.6.3)                 |
+| Detection Platform | Splunk Enterprise                  |
+| Index              | linux                              |
+| Log Source         | /var/log/auth.log                  |
+
+---
+
+## Lab Architecture
+
+```text
+Authorized Administrator
+(karen)
+        │
+        ▼
+Ubuntu24
+(10.10.6.3)
+        │
+        ▼
+sudo Activity
+        │
+        ▼
+/var/log/auth.log
+        │
+        ▼
+Splunk Universal Forwarder
+        │
+        ▼
+Splunk Enterprise
+(Index: linux)
+        │
+        ▼
+Linux Monitoring Dashboard
+```
+
+---
+
+## Environment
+
+### Target Host
+
+| Host   | IP Address |
+| ------ | ---------- |
+| vUbu24 | 10.10.6.3  |
+
+### Monitoring Components
+
+| Component                  | Host   |
+| -------------------------- | ------ |
+| Splunk Enterprise          | Splunk |
+| Splunk Universal Forwarder | vUbu24 |
+
+---
+
+## Initial Access
+
+A valid SSH session was established using the account:
+
+```text
+karen
+```
+
+The account already possessed administrative privileges through the `sudo` group.
+
+This scenario does **not** involve privilege escalation.
+
+---
+
+## Privileged Activity Generation
+
+Several administrative commands were executed to generate audit telemetry.
+
+### Identity Verification
+
+```bash
+sudo whoami
+
+sudo id
+```
+
+Purpose:
+
+* Validate administrative access
+* Generate privileged enumeration activity
+
+---
+
+### Sensitive File Access
+
+```bash
+sudo cat /etc/passwd
+
+sudo cat /etc/shadow
+```
+
+Purpose:
+
+* Simulate credential and account enumeration
+* Generate access to sensitive system resources
+
+---
+
+## Account Administration Activity
+
+To generate additional administrative telemetry, multiple local accounts were created.
+
+### Created Accounts
+
+```text
+margit
+godrick
+rennala
+radahn
+rykard
+morgott
+mohg
+malenia
+maliketh
+godfrey
+```
+
+### User Creation
+
+Example:
+
+```bash
+sudo adduser margit
+
+sudo adduser godrick
+```
+
+---
+
+### Privilege Assignment
+
+Accounts were granted administrative permissions:
+
+```bash
+sudo usermod -aG sudo margit
+
+sudo usermod -aG sudo godrick
+```
+
+This generated user and privilege management activity visible in authentication logs.
+
+---
+
+## Telemetry Generated
+
+### Sudo Activity
+
+Examples:
+
+```text
+COMMAND=/usr/bin/whoami
+
+COMMAND=/usr/bin/id
+```
+
+### Sensitive File Access
+
+Examples:
+
+```text
+COMMAND=/usr/bin/cat /etc/passwd
+
+COMMAND=/usr/bin/cat /etc/shadow
+```
+
+### User Creation
+
+Examples:
+
+```text
+COMMAND=/usr/sbin/adduser margit
+```
+
+### Privilege Modification
+
+Examples:
+
+```text
+COMMAND=/usr/sbin/usermod -aG sudo margit
+```
+
+---
+
+## Log Collection
+
+### Source Log
+
+```text
+/var/log/auth.log
+```
+
+### Splunk Universal Forwarder
+
+```ini
+[monitor:///var/log/auth.log]
+disabled = false
+index = linux
+sourcetype = linux_auth
+```
+
+---
+
+## Detection Validation
+
+### Dashboard Panel
+
+```text
+Top Privileged Activities
+```
+
+### Detection Logic
+
+```spl
+index=linux host=vUbu24 sourcetype=linux_auth "COMMAND="
+| rex "COMMAND=(?<command>.*)"
+| eval action=case(
+    match(command,"adduser"),"User Creation",
+    match(command,"usermod"),"Privilege Modification",
+    match(command,"passwd"),"Password Change",
+    match(command,"cat /etc/shadow"),"Shadow File Access",
+    match(command,"cat /etc/passwd"),"Passwd File Access",
+    match(command,"whoami"),"Identity Check",
+    match(command,"id"),"Privilege Enumeration",
+    true(),"Other")
+| stats count by action
+| sort -count
+```
+
+---
+
+## Expected Detection Coverage
+
+| Activity               | Detection |
+| ---------------------- | --------- |
+| Sudo Usage             | ✅         |
+| Identity Verification  | ✅         |
+| Privileged Enumeration | ✅         |
+| Sensitive File Access  | ✅         |
+| User Creation          | ✅         |
+| Privilege Modification | ✅         |
+
+---
+
+## MITRE ATT&CK Mapping
+
+| Technique                         | ID    |
+| --------------------------------- | ----- |
+| Account Discovery                 | T1087 |
+| Create Account                    | T1136 |
+| Account Manipulation              | T1098 |
+| Valid Accounts                    | T1078 |
+| Abuse Elevation Control Mechanism | T1548 |
+
+---
+
+## Detection Outcome
+
+| Validation                        | Status |
+| --------------------------------- | ------ |
+| Administrative Activity Generated | ✅      |
+| Sudo Logging Captured             | ✅      |
+| Sensitive File Access Detected    | ✅      |
+| User Creation Detected            | ✅      |
+| Privilege Assignment Detected     | ✅      |
+| Dashboard Visibility Validated    | ✅      |
+
+---
+
+## Lessons Learned
+
+This scenario demonstrates how routine administrative actions can generate valuable security telemetry and highlights the importance of monitoring privileged activity, account management, and access to sensitive resources.
+
+```text
+Administrator Activity
+         │
+         ▼
+sudo Execution
+         │
+         ▼
+auth.log
+         │
+         ▼
+Splunk Ingestion
+         │
+         ▼
+Activity Classification
+         │
+         ▼
+Investigation & Monitoring
+```
+
+The resulting detections provide visibility into behaviors commonly associated with privilege abuse, persistence, and post-compromise account management.
