@@ -1,0 +1,333 @@
+# Scenario 003 - Linux Persistence Through Privileged Account Creation
+
+## Overview
+
+This scenario simulates an attacker who has already obtained administrative access to a Linux system and establishes long-term persistence by creating multiple privileged local accounts.
+
+The objective is to generate detectable evidence of account creation, privilege assignment, and persistence mechanisms within the DarkForest SOC environment.
+
+### Objectives
+
+* Simulate persistence through account creation
+* Generate account management telemetry
+* Generate privilege assignment events
+* Validate Splunk detection capabilities
+* Verify dashboard visibility and investigation workflows
+
+---
+
+## Scenario Information
+
+| Category           | Value                                |
+| ------------------ | ------------------------------------ |
+| Scenario ID        | DF-LNX-003                           |
+| Technique          | Persistence Through Account Creation |
+| Initial Account    | karen                                |
+| Target             | vUbu24 (10.10.6.3)                   |
+| Detection Platform | Splunk Enterprise                    |
+| Index              | linux                                |
+| Log Source         | /var/log/auth.log                    |
+
+---
+
+## Lab Architecture
+
+```text
+Attacker (karen)
+        │
+        ▼
+Ubuntu24
+(10.10.6.3)
+        │
+        ▼
+sudo adduser
+        │
+        ▼
+Local Accounts Created
+        │
+        ▼
+sudo usermod -aG sudo
+        │
+        ▼
+Administrative Privileges Granted
+        │
+        ▼
+Persistence Established
+        │
+        ▼
+/var/log/auth.log
+        │
+        ▼
+Splunk Universal Forwarder
+        │
+        ▼
+Splunk Enterprise
+(Index: linux)
+```
+
+---
+
+## Environment
+
+### Target Host
+
+| Host   | IP Address |
+| ------ | ---------- |
+| vUbu24 | 10.10.6.3  |
+
+### Monitoring Components
+
+| Component                  | Host   |
+| -------------------------- | ------ |
+| Splunk Enterprise          | Splunk |
+| Splunk Universal Forwarder | vUbu24 |
+
+---
+
+## Initial Situation
+
+The account:
+
+```text
+karen
+```
+
+already possessed administrative privileges through the `sudo` group.
+
+An attacker operating under this account attempted to establish persistence by creating multiple backup administrator accounts.
+
+This scenario does **not** involve privilege escalation.
+
+Administrative access already existed before the attack activity began.
+
+---
+
+## Persistence Establishment
+
+### Local Account Creation
+
+Ten local accounts were created.
+
+```text
+margit
+godrick
+rennala
+radahn
+rykard
+morgott
+mohg
+malenia
+maliketh
+godfrey
+```
+
+Commands executed:
+
+```bash
+sudo adduser margit
+sudo adduser godrick
+sudo adduser rennala
+sudo adduser radahn
+sudo adduser rykard
+sudo adduser morgott
+sudo adduser mohg
+sudo adduser malenia
+sudo adduser maliketh
+sudo adduser godfrey
+```
+
+---
+
+### Privilege Assignment
+
+Each account was granted administrative privileges.
+
+```bash
+sudo usermod -aG sudo margit
+sudo usermod -aG sudo godrick
+sudo usermod -aG sudo rennala
+sudo usermod -aG sudo radahn
+sudo usermod -aG sudo rykard
+sudo usermod -aG sudo morgott
+sudo usermod -aG sudo mohg
+sudo usermod -aG sudo malenia
+sudo usermod -aG sudo maliketh
+sudo usermod -aG sudo godfrey
+```
+
+---
+
+## Attack Flow
+
+```text
+Compromised Administrator
+(karen)
+        │
+        ▼
+Create Local Accounts
+        │
+        ▼
+Assign sudo Privileges
+        │
+        ▼
+Create Multiple Backup Accounts
+        │
+        ▼
+Persistence Established
+```
+
+---
+
+## Telemetry Generated
+
+### User Creation Events
+
+Examples:
+
+```text
+COMMAND=/usr/sbin/adduser margit
+
+COMMAND=/usr/sbin/adduser godrick
+
+COMMAND=/usr/sbin/adduser rennala
+```
+
+### Privilege Assignment Events
+
+Examples:
+
+```text
+COMMAND=/usr/sbin/usermod -aG sudo margit
+
+COMMAND=/usr/sbin/usermod -aG sudo godrick
+
+COMMAND=/usr/sbin/usermod -aG sudo rennala
+```
+
+### Administrative Activity
+
+Examples:
+
+```text
+sudo command execution
+
+group membership modification
+
+account management activity
+```
+
+---
+
+## Log Collection
+
+### Source Log
+
+```text
+/var/log/auth.log
+```
+
+### Splunk Universal Forwarder
+
+```ini
+[monitor:///var/log/auth.log]
+disabled = false
+index = linux
+sourcetype = linux_auth
+```
+
+---
+
+## Detection Validation
+
+### User Creation Detection
+
+```spl
+index=linux host=vUbu24 sourcetype=linux_auth "adduser"
+```
+
+### Privilege Assignment Detection
+
+```spl
+index=linux host=vUbu24 sourcetype=linux_auth "usermod"
+```
+
+### Privileged Activity Detection
+
+```spl
+index=linux host=vUbu24 sourcetype=linux_auth "COMMAND="
+| rex "COMMAND=(?<command>.*)"
+```
+
+### Dashboard Visibility
+
+The Linux Monitoring Dashboard successfully displayed:
+
+* User creation activity
+* Administrative group modifications
+* Privileged command execution
+* Persistence-related actions
+
+---
+
+## Expected Detection Coverage
+
+| Activity                          | Detection |
+| --------------------------------- | --------- |
+| Local Account Creation            | ✅         |
+| Administrative Group Modification | ✅         |
+| Sudo Activity                     | ✅         |
+| Persistence Establishment         | ✅         |
+| Account Management Activity       | ✅         |
+
+---
+
+## MITRE ATT&CK Mapping
+
+| Technique                         | ID    |
+| --------------------------------- | ----- |
+| Create Account                    | T1136 |
+| Account Manipulation              | T1098 |
+| Valid Accounts                    | T1078 |
+| Abuse Elevation Control Mechanism | T1548 |
+
+---
+
+## Detection Outcome
+
+| Validation                     | Status |
+| ------------------------------ | ------ |
+| Account Creation Detected      | ✅      |
+| Privilege Assignment Detected  | ✅      |
+| Administrative Activity Logged | ✅      |
+| Persistence Activity Visible   | ✅      |
+| Splunk Ingestion Validated     | ✅      |
+| Dashboard Visibility Confirmed | ✅      |
+
+---
+
+## Lessons Learned
+
+Persistence does not always require malware, scheduled tasks, or backdoors.
+
+A compromised administrator can establish durable access simply by creating additional privileged accounts that blend into normal system administration activity.
+
+```text
+Compromised Administrator
+         │
+         ▼
+Create Accounts
+         │
+         ▼
+Grant sudo Access
+         │
+         ▼
+Persistence Mechanism
+         │
+         ▼
+Linux Audit Logs
+         │
+         ▼
+Splunk Detection
+```
+
+This scenario demonstrates how account management telemetry can reveal persistence techniques and highlights the importance of monitoring privileged account creation and group membership modifications.
