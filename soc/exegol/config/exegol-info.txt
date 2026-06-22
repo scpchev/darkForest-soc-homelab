@@ -1,0 +1,24 @@
+[*] Exegol Community is currently in version v5.1.10
+[*] More about Exegol at: https://exegol.com
+
+🛸 Available images                           
+┌─────────┬──────────┬───────────────────────┐
+│ Image   │ Size     │ Status                │
+├─────────┼──────────┼───────────────────────┤
+│ free    │ 43.7 GB  │ Up to date (v.3.1.11) │
+│ web     │ 20.14 GB │ Pro / Enterprise only │
+│ nightly │ 44.32 GB │ Pro / Enterprise only │
+│ osint   │ 11.67 GB │ Pro / Enterprise only │
+│ full    │ 44.14 GB │ Pro / Enterprise only │
+│ light   │ 14.79 GB │ Pro / Enterprise only │
+│ ad      │ 30.22 GB │ Pro / Enterprise only │
+└─────────┴──────────┴───────────────────────┘
+
+
+👽 Available containers                                        
+┌───────────────┬─────────┬───────────┬───────────────────────┐
+│ Container tag │ State   │ Image tag │ Configurations        │
+├───────────────┼─────────┼───────────┼───────────────────────┤
+│ darkforest    │ Running │ free      │ Default configuration │
+└───────────────┴─────────┴───────────┴───────────────────────┘
+

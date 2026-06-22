@@ -1,0 +1,3 @@
+default via 10.10.4.254 dev ens18 proto static metric 100 
+10.10.4.0/24 dev ens18 proto kernel scope link src 10.10.4.1 metric 100 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 

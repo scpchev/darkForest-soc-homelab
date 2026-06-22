@@ -1,0 +1,4 @@
+total 12K
+drwxrwxr-x 3 chev chev 4,0K 21 jun 20:15 .
+drwxrwxr-x 5 chev chev 4,0K 22 jun 20:55 ..
+drwxrwsr-x 2 chev chev 4,0K 21 jun 20:41 darkforest

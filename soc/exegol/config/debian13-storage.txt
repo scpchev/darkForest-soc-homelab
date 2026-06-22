@@ -1,0 +1,10 @@
+Sys. de fichiers Taille Utilisé Dispo Uti% Monté sur
+udev               1,9G       0  1,9G   0% /dev
+tmpfs              396M    1,1M  395M   1% /run
+/dev/sda1           75G     58G   14G  82% /
+tmpfs              2,0G     12K  2,0G   1% /dev/shm
+tmpfs              1,0M       0  1,0M   0% /run/credentials/systemd-journald.service
+tmpfs              5,0M       0  5,0M   0% /run/lock
+tmpfs              2,0G    8,0K  2,0G   1% /tmp
+tmpfs              396M    108K  396M   1% /run/user/111
+tmpfs              396M     96K  396M   1% /run/user/1000

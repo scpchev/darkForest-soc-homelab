@@ -1,0 +1,3 @@
+               total       utilisé      libre     partagé tamp/cache   disponible
+Mem:           3,9Gi       1,0Gi       295Mi       2,9Mi       2,9Gi       2,9Gi
+Échange:       4,0Gi       8,8Mi       4,0Gi

@@ -1,0 +1,304 @@
+[
+    {
+        "Id": "f03b360358a318d4b1e596797a3b68ecce90089ff1489786be78fcc49efc2f20",
+        "Created": "2026-06-21T18:15:56.312651621Z",
+        "Path": "/bin/bash",
+        "Args": [
+            "/.exegol/entrypoint.sh",
+            "load_setups",
+            "endless"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 3128,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-06-21T18:15:56.596784778Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:8eb28d09c01e88ec987ab9ad5b36fa8d65cd744bd03d817497d21d213a74588a",
+        "ResolvConfPath": "/var/lib/docker/containers/f03b360358a318d4b1e596797a3b68ecce90089ff1489786be78fcc49efc2f20/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/f03b360358a318d4b1e596797a3b68ecce90089ff1489786be78fcc49efc2f20/hostname",
+        "HostsPath": "/var/lib/docker/containers/f03b360358a318d4b1e596797a3b68ecce90089ff1489786be78fcc49efc2f20/hosts",
+        "LogPath": "/var/lib/docker/containers/f03b360358a318d4b1e596797a3b68ecce90089ff1489786be78fcc49efc2f20/f03b360358a318d4b1e596797a3b68ecce90089ff1489786be78fcc49efc2f20-json.log",
+        "Name": "/exegol-darkforest",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": [
+            "beb8d44d99df7b88866f7369c262d25ae7341e13227ebc1c84b5b8b57e43e2f1",
+            "04b6fac6740ad70994391db3eec77f760cca84d9a635768e7b1bec5706414e53"
+        ],
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "host",
+            "PortBindings": null,
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [
+                "exegol-darkforest:127.0.0.1"
+            ],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "host",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "/home/chev/.local/share/pipx/venvs/exegol/lib/python3.13/site-packages/exegol/utils/imgsync/spawn.sh",
+                    "Target": "/.exegol/spawn.sh",
+                    "ReadOnly": true
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/tmp/.X11-unix",
+                    "Target": "/tmp/.X11-unix"
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/etc/localtime",
+                    "Target": "/etc/localtime",
+                    "ReadOnly": true
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/home/chev/.exegol/my-resources",
+                    "Target": "/opt/my-resources"
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/home/chev/.exegol/exegol-resources",
+                    "Target": "/opt/resources"
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/home/chev/.exegol/workspaces/darkforest",
+                    "Target": "/workspace"
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/087e53c53943cd2a1a18885d44eb278d53794dedb4f554690190f72b5041e8ed-init/diff:/var/lib/docker/overlay2/52fafced0001553e6d7e9ca8007427f2ff42288677841f2b959095b267ddf9dc/diff:/var/lib/docker/overlay2/d51ae3f91b1e1eda46942d58f1e1713250ed30f2541c5c29d2230ab655645a11/diff:/var/lib/docker/overlay2/4e456c710ff6ff30a75ccdc4797c5d4e46091fdb06a67dccfaeaa27d406178f1/diff:/var/lib/docker/overlay2/041e74cf2d7d5addd0c3d1eecc6cad33bc35964ed81b68d3a403faba39f034a0/diff:/var/lib/docker/overlay2/77ec45b9b64ec97b96728d251f45ce4d8b89580e51ed2d39bea167c31a42285c/diff:/var/lib/docker/overlay2/06e4bd5795a703e3847f243e858df1f4c58d73100282b8a1c6550ec4aa196c0c/diff:/var/lib/docker/overlay2/0713cf368bb51db3613a2a2ea6ac5275f9ea05ce6967b6913b981a00228a6f21/diff:/var/lib/docker/overlay2/faa491151c2ab1e815a45d75e20eada2e7f18baa4270222872fae0eb3cf777b8/diff:/var/lib/docker/overlay2/43c7658a5a8d4fb7ffb68b8c96ce88f3345ccd756838e00aa981986f7e671ed6/diff:/var/lib/docker/overlay2/cfe8616b8df78fcbfdb12c92bbedcaa1ea2cf775b3eb0538eeab412470b9090c/diff:/var/lib/docker/overlay2/caf54c926643b42f260948c6ff2327ee1b210771ebcc4adffb7f7939c8fdd9ef/diff:/var/lib/docker/overlay2/37d769f266a18d86102fef4f795932eb9c2f8a368cc78dae7a36a984c8db190c/diff:/var/lib/docker/overlay2/b24dbac3254e65a8aeb3268f68c4632e406b09e4935943ec51f4b0ee8925071c/diff:/var/lib/docker/overlay2/94143f8d95aaa57758c1259c535612a5701bd660db1ea51e3445f2df220e65fc/diff:/var/lib/docker/overlay2/a128c89ebb6f1d2025436e4ca1c070d0e9c907a004c92f0903740a12ecf5c0e8/diff:/var/lib/docker/overlay2/82656cd0bf580353728c3aca69936bb2180aab36a96a4ec7a52821419005d8a1/diff:/var/lib/docker/overlay2/e245fbeed4cf3d86685b6a62ba07680347ca157373871796ebe4d3f7721d5263/diff:/var/lib/docker/overlay2/0c6e7aba637ff148ba02e623454838af774b2a08befed23e637c9f17bededfcd/diff:/var/lib/docker/overlay2/927de5859fc3e544cc6fc6ce463a3b4bb8f6f11a8887303bd0140885592dcbde/diff:/var/lib/docker/overlay2/25ac92ea49db0c84faf7c74a5c5036f413b1288218876385600d1f8160b8eed7/diff:/var/lib/docker/overlay2/606ca05e844bdbde274e33824e7d06864480864f1240b5baa8fb368895f34260/diff:/var/lib/docker/overlay2/af94ad885619098c04290de42787ebbf361789e0802cdf830ca0d7ef13e32bd8/diff:/var/lib/docker/overlay2/f0d14e100962e4d2753e801caf47f94bcf557cfe664c664547468214e0872d79/diff:/var/lib/docker/overlay2/c6d288e992962ba4e272c4ae79560cbc8001a2d9ac12ae8e60c35656b0e2539f/diff:/var/lib/docker/overlay2/5af2e5f0ca384f5b48b2282e9cb779a9940986b7ede2c8d6b222f3eb6b8ca957/diff:/var/lib/docker/overlay2/158848a52673c37d240bdd02d4ee28d456fed6f95ade5c4e583fd4ed7b782b23/diff:/var/lib/docker/overlay2/a4a4656a68a638e0b7805d426d36accbf4099e14e73011134d78a1bae7ef898f/diff:/var/lib/docker/overlay2/596f7551b4d812dc981175bc5c51c3747eeeef5f8cce2eac9c55052aab5332af/diff:/var/lib/docker/overlay2/e2dcc5f5b15e9bcc4eb043220e04126be28970850f62c763b31f62455d96c121/diff:/var/lib/docker/overlay2/2eec92a15228d7c4da16dd605bec338d6be4f2f1b4f66a59a1f16d80a38acade/diff:/var/lib/docker/overlay2/72dccf3c8f2ba8a7d0d9ecf533aad72d61a8fbea36ef986bc20d3e8b48914c54/diff:/var/lib/docker/overlay2/5d0e9eb6887617d267780cda164b7dc65dc1ef7bdc6a5d24062de89f698d6975/diff:/var/lib/docker/overlay2/9849d1b4a1ecd8052ca8f61ef7658395ed7c2c70c2de939ab7ab81dc43417379/diff:/var/lib/docker/overlay2/a8d0ac9c8055f8d593604c55d64b4b39624e6a552c023ee2c3bf3f346e033fd4/diff",
+                "MergedDir": "/var/lib/docker/overlay2/087e53c53943cd2a1a18885d44eb278d53794dedb4f554690190f72b5041e8ed/merged",
+                "UpperDir": "/var/lib/docker/overlay2/087e53c53943cd2a1a18885d44eb278d53794dedb4f554690190f72b5041e8ed/diff",
+                "WorkDir": "/var/lib/docker/overlay2/087e53c53943cd2a1a18885d44eb278d53794dedb4f554690190f72b5041e8ed/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/chev/.local/share/pipx/venvs/exegol/lib/python3.13/site-packages/exegol/utils/imgsync/spawn.sh",
+                "Destination": "/.exegol/spawn.sh",
+                "Mode": "",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/tmp/.X11-unix",
+                "Destination": "/tmp/.X11-unix",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/etc/localtime",
+                "Destination": "/etc/localtime",
+                "Mode": "",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/chev/.exegol/my-resources",
+                "Destination": "/opt/my-resources",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/chev/.exegol/exegol-resources",
+                "Destination": "/opt/resources",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/chev/.exegol/workspaces/darkforest",
+                "Destination": "/workspace",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "exegol-darkforest",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "DISPLAY=:0",
+                "_JAVA_AWT_WM_NONREPARENTING=1",
+                "QT_X11_NO_MITSHM=1",
+                "EXEGOL_RANDOMIZE_SERVICE_PORTS=true",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "load_setups",
+                "endless"
+            ],
+            "Image": "nwodtuhs/exegol:free",
+            "Volumes": null,
+            "WorkingDir": "/workspace",
+            "Entrypoint": [
+                "/bin/bash",
+                "/.exegol/entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "org.exegol.app": "Exegol",
+                "org.exegol.build_date": "2025-12-02T18:21:51Z",
+                "org.exegol.metadata.creation_date": "2026-06-21T20:15:56Z",
+                "org.exegol.metadata.passwd": "UhiKBse5si4Nv9nfkGyon3oI12E50n",
+                "org.exegol.src_repository": "https://github.com/ThePorgs/Exegol-images",
+                "org.exegol.tag": "free",
+                "org.exegol.version": "3.1.11"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "aa9fdfeba925ee23170b88b5a6e3bb974d8d0ed07c61a4bdddfb79e791065d41",
+            "SandboxKey": "/var/run/docker/netns/default",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "host": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "",
+                    "NetworkID": "7f0e58ba10aac39e651e58d40e2c4f8f87dc99596c8c632d1feac0ebe7fee44d",
+                    "EndpointID": "2b5b8d0cc99b298eea3a84c0da918ba5ec51514b65bede3b1f188f4c3b584034",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]

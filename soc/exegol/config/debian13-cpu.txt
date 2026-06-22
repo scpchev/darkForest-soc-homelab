@@ -1,0 +1,41 @@
+Architecture :                            x86_64
+Mode(s) opératoire(s) des processeurs :   32-bit, 64-bit
+Tailles des adresses:                     40 bits physical, 48 bits virtual
+Boutisme :                                Little Endian
+Processeur(s) :                           4
+Liste de processeur(s) en ligne :         0-3
+Identifiant constructeur :                GenuineIntel
+Nom de modèle :                           QEMU Virtual CPU version 2.5+
+Famille de processeur :                   15
+Modèle :                                  107
+Thread(s) par cœur :                      1
+Cœur(s) par socket :                      4
+Socket(s) :                               1
+Révision :                                1
+BogoMIPS :                                5222,40
+Drapeaux :                                fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm constant_tsc nopl xtopology cpuid tsc_known_freq pni ssse3 cx16 sse4_1 sse4_2 x2apic popcnt aes hypervisor lahf_lm cpuid_fault pti
+Constructeur d'hyperviseur :              KVM
+Type de virtualisation :                  complet
+Cache L1d :                               128 KiB (4 instances)
+Cache L1i :                               128 KiB (4 instances)
+Cache L2 :                                16 MiB (4 instances)
+Cache L3 :                                16 MiB (1 instance)
+Nœud(s) NUMA :                            1
+Nœud NUMA 0 de processeur(s) :            0-3
+Vulnérabilité Gather data sampling :      Not affected
+Vulnérabilité Indirect target selection : Mitigation; Aligned branch/return thunks
+Vulnérabilité Itlb multihit :             KVM: Mitigation: VMX unsupported
+Vulnérabilité L1tf :                      Mitigation; PTE Inversion
+Vulnérabilité Mds :                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnérabilité Meltdown :                  Mitigation; PTI
+Vulnérabilité Mmio stale data :           Unknown: No mitigations
+Vulnérabilité Reg file data sampling :    Not affected
+Vulnérabilité Retbleed :                  Not affected
+Vulnérabilité Spec rstack overflow :      Not affected
+Vulnérabilité Spec store bypass :         Vulnerable
+Vulnérabilité Spectre v1 :                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnérabilité Spectre v2 :                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+Vulnérabilité Srbds :                     Not affected
+Vulnérabilité Tsa :                       Not affected
+Vulnérabilité Tsx async abort :           Not affected
+Vulnérabilité Vmscape :                   Not affected

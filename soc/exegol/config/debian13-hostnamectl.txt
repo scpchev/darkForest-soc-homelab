@@ -1,0 +1,14 @@
+ Static hostname: debian
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: e5926be04b5c4f7185fd4c6e7dc8e40d
+         Boot ID: fb6b5abfa80a430cafad6810875ae4fc
+  Virtualization: kvm
+Operating System: Debian GNU/Linux 13 (trixie)
+          Kernel: Linux 6.12.90+deb13.1-amd64
+    Architecture: x86-64
+ Hardware Vendor: QEMU
+  Hardware Model: Standard PC _i440FX + PIIX, 1996_
+Firmware Version: rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org
+   Firmware Date: Tue 2014-04-01
+    Firmware Age: 12y 2month 3w
