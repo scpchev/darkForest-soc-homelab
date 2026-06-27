@@ -1,203 +1,308 @@
-# Scenario 004 - SSH Brute Force Leading to Remote Access
+Active Directory Attack Scenarios
 
-## Overview
+Overview
 
-This scenario demonstrates how Splunk detects and reconstructs an SSH brute force attack against a Windows Server running the OpenSSH Server service.
+This repository contains a collection of attack scenarios executed against the DarkForest Active Directory environment.
 
-The objective is to illustrate the complete attack lifecycle, from multiple failed authentication attempts to a successful login and the attacker's post-compromise activity.
+The purpose is to validate the detection capabilities of the Splunk dashboards developed for the DarkForest SOC homelab by generating realistic Windows, Active Directory and OpenSSH events.
 
-All events are collected by the Splunk Universal Forwarder and correlated within the DarkForest SOC dashboard.
+Each scenario focuses on a different phase of an intrusion, from initial access to Active Directory account manipulation.
 
----
+⸻
 
-## Objectives
+Lab Infrastructure
 
-- Detect repeated failed SSH authentication attempts.
-- Identify a successful login following the brute force attack.
-- Track the attacker's source IP address.
-- Observe the authenticated user's activity.
-- Reconstruct the complete attack timeline.
+Machine	Role
+Debian 13 (Exegol)	Attacker
+DC1	Windows Server 2022 Domain Controller
+Splunk Enterprise	SIEM
+OpenSSH Server	Remote Administration
 
----
+⸻
 
-## Infrastructure
+Detection Coverage
 
-| Host | IP | Role |
-|------|------|------|
-| Debian13 | 10.10.4.1 | Attacker |
-| DC1 | 10.10.6.X | Windows Server with OpenSSH |
-| Splunk Enterprise | 10.10.5.X | SIEM |
+The scenarios populate several dashboards including:
 
----
+* Authentication Activity
+* SSH Activity
+* PowerShell Activity
+* Sysmon Monitoring
+* LDAP Activity
+* Account Management
 
-## Attack Chain
+⸻
 
-```
-Reconnaissance
-        │
-        ▼
-SSH Service Discovery
-        │
-        ▼
+Scenario 001 – SSH Brute Force
+
+Objective
+
+Simulate an attacker attempting to obtain access to the Domain Controller through repeated SSH authentication attempts.
+
+Attack Flow
+
+Attacker
+      │
+      ▼
 SSH Brute Force
-(Multiple Failed Passwords)
-        │
-        ▼
+      │
+      ▼
+Multiple Failed Passwords
+      │
+      ▼
 Successful Authentication
-(Accepted Password)
-        │
-        ▼
-Interactive SSH Session
-        │
-        ▼
-System Discovery
-(whoami, hostname, ipconfig...)
-        │
-        ▼
-Administrative Actions
-(Optional)
-        │
-        ▼
-Session Termination
-```
 
----
+Tool
 
-## MITRE ATT&CK Mapping
+* Hydra
 
-| Tactic | Technique | ID |
-|---------|-----------|------|
-| Credential Access | Brute Force | T1110 |
-| Initial Access | Valid Accounts | T1078 |
-| Lateral Movement | Remote Services: SSH | T1021.004 |
-| Discovery | System Information Discovery | T1082 |
-| Discovery | Account Discovery | T1033 |
+Example Command
 
----
+hydra -l Administrateur -P passwords.txt ssh://10.10.6.1
 
-## Attack Timeline
+Expected Detection
 
-### Phase 1 – Brute Force
+Authentication Activity
 
-The attacker repeatedly attempts to authenticate using invalid credentials.
+* Failed SSH Logons
+* Successful SSH Logons
+* Top SSH Source IPs
 
-Splunk detects:
+MITRE ATT&CK
 
-- Failed password
-- Invalid user
-- Source IP
-- Target account
+* T1110.001 – Password Guessing
+* T1078 – Valid Accounts
+* T1021.004 – SSH
 
-Dashboard panels:
+⸻
 
-- Failed SSH Logons
-- Targeted Accounts
-- Attacking IP Addresses
+Scenario 002 – Host Discovery
 
----
+Objective
 
-### Phase 2 – Initial Access
+Once authenticated through SSH, perform basic host enumeration.
 
-One authentication attempt succeeds.
-
-Splunk detects:
-
-- Accepted password
-- Session opened
-- Username
-- Source IP
-
-Dashboard panels:
-
-- Successful SSH Logons
-- Latest Events
-
----
-
-### Phase 3 – Post-Compromise Activity
-
-Once authenticated, the attacker performs basic reconnaissance.
-
-Example commands:
-
-```
+Commands
 
 whoami
 hostname
+echo %COMPUTERNAME%
 ipconfig
+systeminfo
+whoami /groups
 net user
+net user Administrateur
+net localgroup Administrators
 quser
 
-```
+Expected Detection
 
-Splunk records each executed command and correlates it with the authenticated session.
+SSH Activity
 
----
+* Successful SSH Login
 
-### Phase 4 – Session End
+Sysmon Monitoring
 
-The attacker disconnects from the SSH session.
+* Process Creation Timeline
+* Top Process
+* Suspicious Process
 
-Splunk detects:
+MITRE ATT&CK
 
-- Session closed
-- Disconnect event
+* T1082 – System Information Discovery
+* T1033 – System Owner Discovery
+* T1069 – Permission Groups Discovery
 
----
+⸻
 
-## Expected Dashboard Activity
+Scenario 003 – Active Directory Enumeration
 
-The attack should generate visible activity across multiple dashboard panels:
+Objective
 
-- Increase in Failed SSH Logons
-- Increase in Successful SSH Logons
-- New Attacking IP
-- Targeted User Account
-- Timeline populated with authentication events
-- Latest Events updated in real time
+Enumerate Active Directory objects using the ActiveDirectory PowerShell module.
 
----
+Commands
 
-## Detection Value
+Import-Module ActiveDirectory
+Get-ADDomain
+Get-ADForest
+Get-ADUser -Filter *
+Get-ADComputer -Filter *
+Get-ADGroup -Filter *
+Get-ADOrganizationalUnit -Filter *
+Get-ADGroupMember "Domain Admins"
+Get-ADDefaultDomainPasswordPolicy
 
-This scenario demonstrates how a SOC analyst can reconstruct an intrusion by correlating authentication events with user activity.
+Expected Detection
 
-Instead of viewing isolated events, the dashboard provides the complete sequence:
+PowerShell Activity
 
-```
-Failed Password
-        │
-        ▼
-Failed Password
-        │
-        ▼
-Failed Password
-        │
-        ▼
-Accepted Password
-        │
-        ▼
-SSH Session Started
-        │
-        ▼
-System Discovery
-        │
-        ▼
-Administrative Activity
-        │
-        ▼
-Session Closed
-```
+* PowerShell execution
+* Suspicious AD cmdlets
 
----
+Sysmon Monitoring
 
-## Learning Outcomes
+* PowerShell process creation
+* Command line logging
 
-This scenario demonstrates:
+MITRE ATT&CK
 
-- SSH authentication monitoring
-- Brute force detection
-- Event correlation
-- Attack timeline reconstruction
-- Initial access investigation
-- SOC-oriented log analysis using Splunk
+* T1087 – Account Discovery
+* T1069 – Permission Groups Discovery
+* T1482 – Domain Trust Discovery
+
+⸻
+
+Scenario 004 – Active Directory Account Management
+
+Objective
+
+Generate administrative Active Directory events by creating, modifying and deleting a test user.
+
+The account used throughout this scenario is:
+
+John Doe
+Username : jdoe
+
+⸻
+
+Step 1 – Create User
+
+New-ADUser `
+-Name "John Doe" `
+-GivenName "John" `
+-Surname "Doe" `
+-SamAccountName jdoe `
+-UserPrincipalName jdoe@pale.forest `
+-AccountPassword (ConvertTo-SecureString "P@ssw0rd123!" -AsPlainText -Force) `
+-Enabled $true
+
+Expected Event ID
+
+* 4720 – User Account Created
+
+⸻
+
+Step 2 – Add User to Domain Admins
+
+Add-ADGroupMember `
+-Identity "Domain Admins" `
+-Members jdoe
+
+Expected Event IDs
+
+* 4728
+* 4732
+* 4756
+
+⸻
+
+Step 3 – Remove User from Domain Admins
+
+Remove-ADGroupMember `
+-Identity "Domain Admins" `
+-Members jdoe `
+-Confirm:$false
+
+Expected Event IDs
+
+* 4729
+* 4733
+* 4757
+
+⸻
+
+Step 4 – Delete User
+
+Remove-ADUser jdoe -Confirm:$false
+
+Expected Event ID
+
+* 4726 – User Account Deleted
+
+⸻
+
+Expected Detection
+
+Account Management Dashboard
+
+* Account Creation
+* Privileged Group Membership Changes
+* Account Deletion
+
+MITRE ATT&CK
+
+* T1098 – Account Manipulation
+
+⸻
+
+Complete Attack Chain
+
+                     Exegol
+                        │
+                        │
+                        ▼
+         Scenario 001 - SSH Brute Force
+                        │
+                        ▼
+      Successful SSH Authentication
+                        │
+                        ▼
+       Scenario 002 - Host Discovery
+                        │
+                        ▼
+ Scenario 003 - Active Directory Enumeration
+                        │
+                        ▼
+ Scenario 004 - Active Directory Account Management
+                        │
+        ┌───────────────┼────────────────┐
+        │               │                │
+        ▼               ▼                ▼
+  User Creation   Privilege Change   User Deletion
+
+⸻
+
+Detection Objectives
+
+These scenarios validate the visibility of common attacker actions inside a Windows Active Directory environment.
+
+The dashboards should successfully detect:
+
+* SSH brute force attacks
+* Successful SSH authentication
+* Interactive attacker activity
+* Host discovery
+* PowerShell execution
+* Active Directory enumeration
+* User account creation
+* Privileged group modifications
+* User account deletion
+
+⸻
+
+Future Improvements
+
+Future scenarios planned for DarkForest include:
+
+* Password spraying
+* Kerberoasting
+* AS-REP Roasting
+* DCSync
+* Pass-the-Hash
+* Lateral Movement
+* Remote PowerShell
+* WinRM
+* RDP attacks
+* Golden Ticket
+* Silver Ticket
+* GPO abuse
+* Persistence techniques
+
+⸻
+
+Project
+
+DarkForest SOC Homelab
+
+A realistic cybersecurity laboratory designed to simulate enterprise attacks while validating detection engineering and SIEM monitoring using Splunk Enterprise.
