@@ -1,1 +1,309 @@
 
+Active Directory Attack Scenarios
+
+Overview
+
+This repository contains a collection of attack scenarios executed against the DarkForest Active Directory environment.
+
+The purpose is to validate the detection capabilities of the Splunk dashboards developed for the DarkForest SOC homelab by generating realistic Windows, Active Directory and OpenSSH events.
+
+Each scenario focuses on a different phase of an intrusion, from initial access to Active Directory account manipulation.
+
+⸻
+
+Lab Infrastructure
+
+Machine	Role
+Debian 13 (Exegol)	Attacker
+DC1	Windows Server 2022 Domain Controller
+Splunk Enterprise	SIEM
+OpenSSH Server	Remote Administration
+
+⸻
+
+Detection Coverage
+
+The scenarios populate several dashboards including:
+
+* Authentication Activity
+* SSH Activity
+* PowerShell Activity
+* Sysmon Monitoring
+* LDAP Activity
+* Account Management
+
+⸻
+
+Scenario 001 – SSH Brute Force
+
+Objective
+
+Simulate an attacker attempting to obtain access to the Domain Controller through repeated SSH authentication attempts.
+
+Attack Flow
+
+Attacker
+      │
+      ▼
+SSH Brute Force
+      │
+      ▼
+Multiple Failed Passwords
+      │
+      ▼
+Successful Authentication
+
+Tool
+
+* Hydra
+
+Example Command
+
+hydra -l Administrateur -P passwords.txt ssh://10.10.6.1
+
+Expected Detection
+
+Authentication Activity
+
+* Failed SSH Logons
+* Successful SSH Logons
+* Top SSH Source IPs
+
+MITRE ATT&CK
+
+* T1110.001 – Password Guessing
+* T1078 – Valid Accounts
+* T1021.004 – SSH
+
+⸻
+
+Scenario 002 – Host Discovery
+
+Objective
+
+Once authenticated through SSH, perform basic host enumeration.
+
+Commands
+
+whoami
+hostname
+echo %COMPUTERNAME%
+ipconfig
+systeminfo
+whoami /groups
+net user
+net user Administrateur
+net localgroup Administrators
+quser
+
+Expected Detection
+
+SSH Activity
+
+* Successful SSH Login
+
+Sysmon Monitoring
+
+* Process Creation Timeline
+* Top Process
+* Suspicious Process
+
+MITRE ATT&CK
+
+* T1082 – System Information Discovery
+* T1033 – System Owner Discovery
+* T1069 – Permission Groups Discovery
+
+⸻
+
+Scenario 003 – Active Directory Enumeration
+
+Objective
+
+Enumerate Active Directory objects using the ActiveDirectory PowerShell module.
+
+Commands
+
+Import-Module ActiveDirectory
+Get-ADDomain
+Get-ADForest
+Get-ADUser -Filter *
+Get-ADComputer -Filter *
+Get-ADGroup -Filter *
+Get-ADOrganizationalUnit -Filter *
+Get-ADGroupMember "Domain Admins"
+Get-ADDefaultDomainPasswordPolicy
+
+Expected Detection
+
+PowerShell Activity
+
+* PowerShell execution
+* Suspicious AD cmdlets
+
+Sysmon Monitoring
+
+* PowerShell process creation
+* Command line logging
+
+MITRE ATT&CK
+
+* T1087 – Account Discovery
+* T1069 – Permission Groups Discovery
+* T1482 – Domain Trust Discovery
+
+⸻
+
+Scenario 004 – Active Directory Account Management
+
+Objective
+
+Generate administrative Active Directory events by creating, modifying and deleting a test user.
+
+The account used throughout this scenario is:
+
+John Doe
+Username : jdoe
+
+⸻
+
+Step 1 – Create User
+
+New-ADUser `
+-Name "John Doe" `
+-GivenName "John" `
+-Surname "Doe" `
+-SamAccountName jdoe `
+-UserPrincipalName jdoe@pale.forest `
+-AccountPassword (ConvertTo-SecureString "P@ssw0rd123!" -AsPlainText -Force) `
+-Enabled $true
+
+Expected Event ID
+
+* 4720 – User Account Created
+
+⸻
+
+Step 2 – Add User to Domain Admins
+
+Add-ADGroupMember `
+-Identity "Domain Admins" `
+-Members jdoe
+
+Expected Event IDs
+
+* 4728
+* 4732
+* 4756
+
+⸻
+
+Step 3 – Remove User from Domain Admins
+
+Remove-ADGroupMember `
+-Identity "Domain Admins" `
+-Members jdoe `
+-Confirm:$false
+
+Expected Event IDs
+
+* 4729
+* 4733
+* 4757
+
+⸻
+
+Step 4 – Delete User
+
+Remove-ADUser jdoe -Confirm:$false
+
+Expected Event ID
+
+* 4726 – User Account Deleted
+
+⸻
+
+Expected Detection
+
+Account Management Dashboard
+
+* Account Creation
+* Privileged Group Membership Changes
+* Account Deletion
+
+MITRE ATT&CK
+
+* T1098 – Account Manipulation
+
+⸻
+
+Complete Attack Chain
+
+                     Exegol
+                        │
+                        │
+                        ▼
+         Scenario 001 - SSH Brute Force
+                        │
+                        ▼
+      Successful SSH Authentication
+                        │
+                        ▼
+       Scenario 002 - Host Discovery
+                        │
+                        ▼
+ Scenario 003 - Active Directory Enumeration
+                        │
+                        ▼
+ Scenario 004 - Active Directory Account Management
+                        │
+        ┌───────────────┼────────────────┐
+        │               │                │
+        ▼               ▼                ▼
+  User Creation   Privilege Change   User Deletion
+
+⸻
+
+Detection Objectives
+
+These scenarios validate the visibility of common attacker actions inside a Windows Active Directory environment.
+
+The dashboards should successfully detect:
+
+* SSH brute force attacks
+* Successful SSH authentication
+* Interactive attacker activity
+* Host discovery
+* PowerShell execution
+* Active Directory enumeration
+* User account creation
+* Privileged group modifications
+* User account deletion
+
+⸻
+
+Future Improvements
+
+Future scenarios planned for DarkForest include:
+
+* Password spraying
+* Kerberoasting
+* AS-REP Roasting
+* DCSync
+* Pass-the-Hash
+* Lateral Movement
+* Remote PowerShell
+* WinRM
+* RDP attacks
+* Golden Ticket
+* Silver Ticket
+* GPO abuse
+* Persistence techniques
+
+⸻
+
+Project
+
+DarkForest SOC Homelab
+
+A realistic cybersecurity laboratory designed to simulate enterprise attacks while validating detection engineering and SIEM monitoring using Splunk Enterprise.
