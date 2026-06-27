@@ -1,0 +1,246 @@
+# DarkForest Scenario 004 - Active Directory Enumeration & Persistence
+
+## Overview
+
+This scenario simulates a complete Active Directory attack sequence performed directly on the Domain Controller (DC1).
+
+Unlike traditional attack paths involving compromised workstations, this scenario focuses on the visibility of Active Directory activity from the perspective of a Security Operations Center (SOC).
+
+The objective is to validate Splunk detections, Sysmon telemetry, PowerShell logging and Windows Security events while documenting a realistic attacker workflow.
+
+---
+
+## Objectives
+
+- Validate Active Directory authentication monitoring
+- Generate PowerShell Operational logs (Event ID 4104)
+- Generate Sysmon Process Creation events (Event ID 1)
+- Monitor account creation and privilege modifications
+- Validate Splunk dashboards and detection rules
+- Produce reproducible SOC investigation scenarios
+
+---
+
+## Lab Environment
+
+| Component | Description |
+|-----------|-------------|
+| Domain Controller | DC1 (Windows Server 2022) |
+| SIEM | Splunk Enterprise |
+| Logging | Sysmon + Windows Security + PowerShell Operational |
+| Remote Access | Apache Guacamole (RDP) |
+
+---
+
+# Attack Chain
+
+## Phase 1 - Initial Access
+
+The attacker authenticates to DC1 using Remote Desktop through Apache Guacamole.
+
+Expected Events
+
+- Event ID 4624
+- Interactive Logon
+- Successful authentication
+
+Dashboard Panels
+
+- Successful Logons
+- Authentication Activity
+- Top Source IPs
+
+---
+
+## Phase 2 - Active Directory Enumeration
+
+The attacker begins reconnaissance of the Active Directory environment.
+
+PowerShell Commands
+
+```powershell
+Get-ADUser
+Get-ADComputer
+Get-ADGroup
+Get-ADDomain
+Get-ADForest
+```
+
+Command Prompt
+
+```cmd
+whoami
+whoami /groups
+hostname
+
+net user
+net user /domain
+
+net group "Domain Admins" /domain
+net accounts /domain
+
+nltest /dsgetdc:pale.forest
+```
+
+Expected Events
+
+- PowerShell Event ID 4104
+- Sysmon Event ID 1
+- LDAP Activity
+
+Dashboard Panels
+
+- PowerShell Activity
+- Suspicious AD Commands
+- Process Creation Timeline
+- Top Process
+- LDAP Activity
+
+---
+
+## Phase 3 - Account Creation
+
+The attacker creates a new Active Directory account.
+
+Example
+
+```powershell
+New-ADUser `
+-Name "backupsvc" `
+-SamAccountName backupsvc `
+-AccountPassword (ConvertTo-SecureString "Password123!" -AsPlainText -Force) `
+-Enabled $true
+```
+
+Expected Events
+
+- User Creation
+- Directory Service Events
+
+Dashboard Panels
+
+- User Management
+- LDAP Activity
+
+---
+
+## Phase 4 - Privilege Escalation
+
+The newly created account is added to a privileged security group.
+
+Example
+
+```powershell
+Add-ADGroupMember `
+-Identity "Domain Admins" `
+-Members backupsvc
+```
+
+Expected Events
+
+- Group Membership Modification
+- Directory Service Events
+
+Dashboard Panels
+
+- Group Changes
+- LDAP Activity
+
+---
+
+## Phase 5 - Validation
+
+The attacker disconnects from the current session and authenticates using the newly created account.
+
+Expected Events
+
+- Event ID 4624
+- Interactive Logon
+
+Dashboard Panels
+
+- Successful Logons
+- Authentication Timeline
+- Top Source IPs
+
+---
+
+## MITRE ATT&CK Mapping
+
+| Phase | Technique |
+|--------|-----------|
+| Initial Access | T1078 - Valid Accounts |
+| Discovery | T1087 - Account Discovery |
+| Discovery | T1018 - Remote System Discovery |
+| Discovery | T1482 - Domain Trust Discovery |
+| Execution | T1059.001 - PowerShell |
+| Persistence | T1136.002 - Create Domain Account |
+| Privilege Escalation | T1098 - Account Manipulation |
+
+---
+
+# Expected Detection Coverage
+
+The scenario validates the following telemetry:
+
+- Windows Security Log
+- Sysmon Process Creation
+- Sysmon Network Connections
+- PowerShell Operational Logging
+- Directory Service Logs
+- LDAP Activity
+- Authentication Events
+- Account Management Events
+
+---
+
+# Expected Dashboard Activity
+
+The following DarkForest Active Directory dashboard panels should react during the scenario.
+
+- Successful Logons
+- Failed Logons (optional)
+- Authentication Activity
+- Top Source IPs
+- PowerShell Activity
+- Suspicious AD Commands
+- Process Creation Timeline
+- Top Process
+- LDAP Activity
+- User Creation
+- Group Membership Changes
+
+---
+
+# Learning Objectives
+
+After completing this scenario, the analyst should be able to:
+
+- Follow an attack through multiple Windows log sources
+- Correlate Security, Sysmon and PowerShell events
+- Detect Active Directory reconnaissance
+- Identify account creation and privilege escalation
+- Validate SOC dashboards and detections
+- Understand the attack lifecycle from initial authentication to persistence
+
+---
+
+## Repository Structure
+
+```
+Scenario-004-ActiveDirectory/
+│
+├── README.md
+├── dashboards/
+│   ├── ActiveDirectoryDashboard.pdf
+│   └── screenshots/
+├── screenshots/
+├── logs/
+└── detections/
+```
+
+---
+
+DarkForest Lab
+
+Scenario 004 demonstrates how a Security Operations Center can reconstruct an Active Directory attack using native Windows logs, Sysmon telemetry and Splunk dashboards without relying on endpoint detection products.
