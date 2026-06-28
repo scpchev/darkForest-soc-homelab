@@ -1,88 +1,69 @@
-Scenario 001 - Nmap Reconnaissance Detection (Suricata)
+# Scenario 001 - Aggressive Reconnaissance Scan
 
-Overview
+## Command
 
-This scenario demonstrates how different Nmap reconnaissance techniques generate alerts in Suricata. Three progressively more advanced scans were executed from the Exegol attack platform against the Windows 11 victim.
+```bash
+nmap -Pn -A -T4 10.10.6.2
+```
 
-Attacker: Exegol (10.10.4.1)
+### Description
 
-Target: Windows 11 (10.10.6.2)
+Performs an aggressive reconnaissance scan against the Windows 11 host.
 
-IDS: Suricata (pfSense)
+### Enabled Features
 
-⸻
+- Operating System Detection
+- Service Version Detection
+- Default NSE Scripts
+- Traceroute
+- TCP Fingerprinting
 
-Scenario 1 - SYN Scan
+### Objective
 
-Command
+Obtain the maximum amount of information about the target host while generating rich network traffic for Suricata detection.
 
-nmap -Pn -sS 10.10.6.2
+---
 
-Description
+# Scenario 002 - Full TCP Port Scan
 
-Performs a TCP SYN (“half-open”) scan to identify open TCP ports without completing the full TCP handshake.
+## Command
 
-Purpose
+```bash
+nmap -Pn -p- -T4 10.10.6.2
+```
 
-* Discover open ports
-* Fast reconnaissance
-* Low network footprint
+### Description
 
-⸻
+Scans all 65,535 TCP ports of the target.
 
-Scenario 2 - Service Version Detection
+### Objective
 
-Command
+Enumerate every accessible TCP service and identify unexpected open ports.
 
-nmap -Pn -sV 10.10.6.2
+---
 
-Description
+# Scenario 003 - UDP Top Ports Scan
 
-Performs service detection on open ports by sending application-specific probes to identify the running software and version.
+## Command
 
-Purpose
+```bash
+nmap -Pn -sU --top-ports 100 10.10.6.2
+```
 
-* Identify running services
-* Detect software versions
-* Gather information for further exploitation
+### Description
 
-⸻
+Scans the 100 most common UDP ports.
 
-Scenario 3 - Aggressive Scan
+### Objective
 
-Command
+Identify exposed UDP services such as NetBIOS, ISAKMP, UPnP and mDNS.
 
-nmap -Pn -sS -T5 -A --reason 10.10.6.2
+---
 
-Description
+# Summary
 
-Performs an aggressive reconnaissance combining multiple Nmap features into a single scan.
-
-Enabled Features
-
-* TCP SYN Scan (-sS)
-* OS Detection (-O)
-* Service Version Detection (-sV)
-* Default NSE Scripts (-sC)
-* Traceroute
-* Fast Timing Template (-T5)
-* Displays scan reasoning (--reason)
-
-Purpose
-
-* Comprehensive host fingerprinting
-* Operating system identification
-* Service enumeration
-* Network path discovery
-* Application and protocol fingerprinting
-
-⸻
-
-Summary
-
-Scenario	Command	Objective
-Scenario 1	nmap -Pn -sS 10.10.6.2	TCP SYN reconnaissance
-Scenario 2	nmap -Pn -sV 10.10.6.2	Service version detection
-Scenario 3	nmap -Pn -sS -T5 -A --reason 10.10.6.2	Aggressive reconnaissance and fingerprinting
-
-These three scenarios were executed to evaluate Suricata’s detection capabilities against increasingly detailed reconnaissance activity performed with Nmap.
+| Scenario | Command | Goal |
+|----------|---------|------|
+| Scenario 001 | `nmap -Pn -A -T4 10.10.6.2` | Aggressive host and service fingerprinting |
+| Scenario 002 | `nmap -Pn -p- -T4 10.10.6.2` | Full TCP port enumeration |
+| Scenario 003 | `nmap -Pn -sU --top-ports 100 10.10.6.2` | UDP reconnaissance |
