@@ -1,0 +1,344 @@
+06/27/2026-16:41:26.439362  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:58786 -> 64.233.184.95:443
+06/27/2026-17:19:31.785832  [**] [1:2260000:1] SURICATA Applayer Mismatch protocol both directions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:42056 -> 10.10.6.1:135
+06/27/2026-17:19:31.795764  [**] [1:2036252:1] ET SCAN RDP Connection Attempt from Nmap [**] [Classification: Detection of a Network Scan] [Priority: 3] {TCP} 10.10.4.1:60562 -> 10.10.6.1:3389
+06/27/2026-17:19:37.417676  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.1:9
+06/27/2026-17:19:39.610410  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.1:9
+06/27/2026-17:19:40.569920  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40374 -> 10.10.6.1:5357
+06/27/2026-17:19:40.570026  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40366 -> 10.10.6.1:5357
+06/27/2026-17:19:40.570032  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40334 -> 10.10.6.1:5357
+06/27/2026-17:19:40.570043  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40322 -> 10.10.6.1:5357
+06/27/2026-17:19:40.570071  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40346 -> 10.10.6.1:5357
+06/27/2026-17:19:40.570038  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40354 -> 10.10.6.1:5357
+06/27/2026-17:19:40.570058  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40306 -> 10.10.6.1:5357
+06/27/2026-17:19:40.621983  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40384 -> 10.10.6.1:5357
+06/27/2026-17:19:40.622041  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40376 -> 10.10.6.1:5357
+06/27/2026-17:19:40.721832  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40418 -> 10.10.6.1:5357
+06/27/2026-17:19:40.669900  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40400 -> 10.10.6.1:5357
+06/27/2026-17:19:40.773825  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40474 -> 10.10.6.1:5357
+06/27/2026-17:19:40.773916  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40446 -> 10.10.6.1:5357
+06/27/2026-17:19:40.721919  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40406 -> 10.10.6.1:5357
+06/27/2026-17:19:40.773945  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40428 -> 10.10.6.1:5357
+06/27/2026-17:19:40.773894  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40458 -> 10.10.6.1:5357
+06/27/2026-17:19:40.826036  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40502 -> 10.10.6.1:5357
+06/27/2026-17:19:40.773911  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40448 -> 10.10.6.1:5357
+06/27/2026-17:19:40.773958  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40420 -> 10.10.6.1:5357
+06/27/2026-17:19:40.781790  [**] [1:2036252:1] ET SCAN RDP Connection Attempt from Nmap [**] [Classification: Detection of a Network Scan] [Priority: 3] {TCP} 10.10.4.1:42430 -> 10.10.6.1:3389
+06/27/2026-17:19:40.825980  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40488 -> 10.10.6.1:5357
+06/27/2026-17:19:40.877800  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40522 -> 10.10.6.1:5357
+06/27/2026-17:19:40.877827  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40518 -> 10.10.6.1:5357
+06/27/2026-17:19:40.929991  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40540 -> 10.10.6.1:5357
+06/27/2026-17:19:40.930023  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40538 -> 10.10.6.1:5357
+06/27/2026-17:19:40.930040  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:40536 -> 10.10.6.1:5357
+06/27/2026-17:19:40.930040  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40536 -> 10.10.6.1:5357
+06/27/2026-17:19:41.029882  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40560 -> 10.10.6.1:5357
+06/27/2026-17:19:41.030022  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40550 -> 10.10.6.1:5357
+06/27/2026-17:19:41.081834  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40568 -> 10.10.6.1:5357
+06/27/2026-17:19:41.233885  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40584 -> 10.10.6.1:5357
+06/27/2026-17:19:41.181775  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40576 -> 10.10.6.1:5357
+06/27/2026-17:19:41.333701  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40598 -> 10.10.6.1:5357
+06/27/2026-17:19:41.433936  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40610 -> 10.10.6.1:5357
+06/27/2026-17:19:41.485819  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40624 -> 10.10.6.1:5357
+06/27/2026-17:19:41.585866  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40630 -> 10.10.6.1:5357
+06/27/2026-17:19:41.785965  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40642 -> 10.10.6.1:5357
+06/27/2026-17:19:41.633901  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:40638 -> 10.10.6.1:5357
+06/27/2026-17:21:37.366521  [**] [1:2221010:1] SURICATA HTTP unable to match response to request [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.1:5357 -> 10.10.4.1:39580
+06/27/2026-17:21:45.335117  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:47088 -> 10.10.6.1:445
+06/27/2026-17:21:50.013015  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:34190 -> 10.10.6.1:445
+06/27/2026-17:21:51.980948  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:34194 -> 10.10.6.1:445
+06/27/2026-17:21:52.303629  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:34210 -> 10.10.6.1:445
+06/27/2026-17:21:59.274921  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:34226 -> 10.10.6.1:445
+06/27/2026-17:28:20.200595  [**] [1:2260000:1] SURICATA Applayer Mismatch protocol both directions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:35176 -> 10.10.6.1:135
+06/27/2026-17:28:20.214467  [**] [1:2036252:1] ET SCAN RDP Connection Attempt from Nmap [**] [Classification: Detection of a Network Scan] [Priority: 3] {TCP} 10.10.4.1:34808 -> 10.10.6.1:3389
+06/27/2026-17:28:25.213786  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:38952 -> 10.10.6.1:5357
+06/27/2026-17:28:25.215230  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:38986 -> 10.10.6.1:5357
+06/27/2026-17:28:25.214065  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:38962 -> 10.10.6.1:5357
+06/27/2026-17:28:25.215765  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:38994 -> 10.10.6.1:5357
+06/27/2026-17:30:21.099466  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:21.350594  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:21.602031  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:21.852769  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:23.232221  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:23.483302  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:23.734238  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:23.985062  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:30:31.141789  [**] [1:2221010:1] SURICATA HTTP unable to match response to request [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.1:5357 -> 10.10.4.1:50106
+06/27/2026-17:31:02.591605  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:02.591605  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:03.592637  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:03.592637  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:04.602568  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:04.602568  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:05.600785  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:05.600785  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:31:21.802775  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.1:0
+06/27/2026-17:31:21.802775  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.1:0
+06/27/2026-17:31:22.807373  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.1:0
+06/27/2026-17:31:22.807373  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.1:0
+06/27/2026-17:33:00.518780  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:33:00.518780  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:33:01.526741  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:33:01.526741  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:33:02.533696  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:33:02.533696  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:38:45.730539  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:38:45.730539  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:38:46.739428  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:38:46.739428  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:38:47.742016  [**] [1:2100366:8] GPL ICMP PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:38:47.742016  [**] [1:2100368:7] GPL ICMP PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.46:8 -> 10.10.6.2:0
+06/27/2026-17:39:17.305535  [**] [1:2260000:1] SURICATA Applayer Mismatch protocol both directions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:42486 -> 10.10.6.2:135
+06/27/2026-17:39:22.938985  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:39:25.135585  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/27/2026-17:39:25.961661  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36010 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961762  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35946 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961705  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36008 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961868  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36022 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961735  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35978 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961777  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35944 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961886  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35990 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961807  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35968 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961950  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36042 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961968  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36040 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961909  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35958 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961932  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35922 -> 10.10.6.2:5357
+06/27/2026-17:39:25.962034  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35996 -> 10.10.6.2:5357
+06/27/2026-17:39:25.961985  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36030 -> 10.10.6.2:5357
+06/27/2026-17:39:25.962054  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:35994 -> 10.10.6.2:5357
+06/27/2026-17:39:26.113385  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36106 -> 10.10.6.2:5357
+06/27/2026-17:39:26.065598  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36056 -> 10.10.6.2:5357
+06/27/2026-17:39:26.113429  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36114 -> 10.10.6.2:5357
+06/27/2026-17:39:26.065788  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36044 -> 10.10.6.2:5357
+06/27/2026-17:39:26.113531  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36070 -> 10.10.6.2:5357
+06/27/2026-17:39:26.113458  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36088 -> 10.10.6.2:5357
+06/27/2026-17:39:26.113480  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36096 -> 10.10.6.2:5357
+06/27/2026-17:39:26.113501  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36084 -> 10.10.6.2:5357
+06/27/2026-17:39:26.213417  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36124 -> 10.10.6.2:5357
+06/27/2026-17:39:26.261649  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36134 -> 10.10.6.2:5357
+06/27/2026-17:39:26.261548  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:36140 -> 10.10.6.2:5357
+06/27/2026-17:39:26.261548  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36140 -> 10.10.6.2:5357
+06/27/2026-17:39:26.361306  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36150 -> 10.10.6.2:5357
+06/27/2026-17:39:26.261700  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36126 -> 10.10.6.2:5357
+06/27/2026-17:39:26.413472  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36164 -> 10.10.6.2:5357
+06/27/2026-17:39:26.513747  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36166 -> 10.10.6.2:5357
+06/27/2026-17:39:26.561449  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36176 -> 10.10.6.2:5357
+06/27/2026-17:39:26.661642  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36192 -> 10.10.6.2:5357
+06/27/2026-17:39:26.761312  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36202 -> 10.10.6.2:5357
+06/27/2026-17:39:26.813311  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36208 -> 10.10.6.2:5357
+06/27/2026-17:39:26.913331  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36224 -> 10.10.6.2:5357
+06/27/2026-17:39:26.961647  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36234 -> 10.10.6.2:5357
+06/27/2026-17:39:27.113440  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36244 -> 10.10.6.2:5357
+06/27/2026-17:41:23.767004  [**] [1:2221010:1] SURICATA HTTP unable to match response to request [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:5357 -> 10.10.4.1:36270
+06/27/2026-17:41:34.432945  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:36444 -> 10.10.6.2:445
+06/27/2026-17:41:35.429700  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:36426 -> 10.10.6.2:445
+06/27/2026-17:41:37.421464  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:36452 -> 10.10.6.2:445
+06/27/2026-17:41:40.408685  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:37510 -> 10.10.6.2:445
+06/27/2026-17:41:41.404725  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:36454 -> 10.10.6.2:445
+06/27/2026-17:42:22.787013  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.1:22 -> 10.10.4.1:58374
+06/27/2026-17:42:22.787013  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.1:22 -> 10.10.4.1:58374
+06/27/2026-17:42:22.787334  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:58374 -> 10.10.6.1:22
+06/27/2026-17:48:24.933039  [**] [1:2210054:1] SURICATA STREAM excessive retransmissions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:49353 -> 74.125.71.102:443
+06/28/2026-13:16:44.290848  [**] [1:2260000:1] SURICATA Applayer Mismatch protocol both directions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:45782 -> 10.10.6.2:135
+06/28/2026-13:16:49.926125  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-13:16:52.136752  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-13:16:52.965136  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51452 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965106  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51496 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965160  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51422 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965147  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51450 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965185  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51412 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965173  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51458 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965198  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51370 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965447  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51474 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965498  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51486 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965659  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51480 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965707  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51434 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965886  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51404 -> 10.10.6.2:5357
+06/28/2026-13:16:52.966089  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51386 -> 10.10.6.2:5357
+06/28/2026-13:16:52.965940  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51400 -> 10.10.6.2:5357
+06/28/2026-13:16:52.966285  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51354 -> 10.10.6.2:5357
+06/28/2026-13:16:52.966134  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51384 -> 10.10.6.2:5357
+06/28/2026-13:16:53.065007  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51518 -> 10.10.6.2:5357
+06/28/2026-13:16:53.065013  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:51516 -> 10.10.6.2:5357
+06/28/2026-13:16:53.065013  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51516 -> 10.10.6.2:5357
+06/28/2026-13:16:53.064956  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51500 -> 10.10.6.2:5357
+06/28/2026-13:16:53.116812  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51550 -> 10.10.6.2:5357
+06/28/2026-13:16:53.064999  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51510 -> 10.10.6.2:5357
+06/28/2026-13:16:53.116840  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51546 -> 10.10.6.2:5357
+06/28/2026-13:16:53.116885  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51536 -> 10.10.6.2:5357
+06/28/2026-13:16:53.116913  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51522 -> 10.10.6.2:5357
+06/28/2026-13:16:53.216938  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51568 -> 10.10.6.2:5357
+06/28/2026-13:16:53.365039  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51600 -> 10.10.6.2:5357
+06/28/2026-13:16:53.216969  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51552 -> 10.10.6.2:5357
+06/28/2026-13:16:53.564974  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51622 -> 10.10.6.2:5357
+06/28/2026-13:16:53.364971  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51584 -> 10.10.6.2:5357
+06/28/2026-13:16:53.664991  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:52234 -> 10.10.6.2:5357
+06/28/2026-13:16:53.365049  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51574 -> 10.10.6.2:5357
+06/28/2026-13:16:53.513083  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:51612 -> 10.10.6.2:5357
+06/28/2026-13:16:53.712952  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:52244 -> 10.10.6.2:5357
+06/28/2026-13:16:53.960983  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:52270 -> 10.10.6.2:5357
+06/28/2026-13:16:53.812926  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:52260 -> 10.10.6.2:5357
+06/28/2026-13:16:54.113033  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:52280 -> 10.10.6.2:5357
+06/28/2026-13:18:54.828323  [**] [1:2221010:1] SURICATA HTTP unable to match response to request [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:5357 -> 10.10.4.1:43956
+06/28/2026-13:19:01.210689  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:57422 -> 10.10.6.2:445
+06/28/2026-13:19:02.794566  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:57448 -> 10.10.6.2:445
+06/28/2026-13:19:02.794790  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:57394 -> 10.10.6.2:445
+06/28/2026-13:19:03.789940  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:57366 -> 10.10.6.2:445
+06/28/2026-13:19:06.361354  [**] [1:2260000:1] SURICATA Applayer Mismatch protocol both directions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:37744 -> 10.10.6.2:135
+06/28/2026-13:19:06.776542  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:57438 -> 10.10.6.2:445
+06/28/2026-13:19:11.990081  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-13:19:14.184662  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-13:19:15.017093  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54052 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017192  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53994 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017212  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54068 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017258  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53950 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017425  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53970 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017437  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54026 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017444  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54008 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017454  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53932 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017472  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53956 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017160  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53996 -> 10.10.6.2:5357
+06/28/2026-13:19:15.121028  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54072 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017232  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54064 -> 10.10.6.2:5357
+06/28/2026-13:19:15.169010  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54132 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017311  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54020 -> 10.10.6.2:5357
+06/28/2026-13:19:15.169125  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54106 -> 10.10.6.2:5357
+06/28/2026-13:19:15.169347  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54120 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017356  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54036 -> 10.10.6.2:5357
+06/28/2026-13:19:15.169427  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54114 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017432  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53924 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017449  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53980 -> 10.10.6.2:5357
+06/28/2026-13:19:15.017484  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:53938 -> 10.10.6.2:5357
+06/28/2026-13:19:15.120842  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:54100 -> 10.10.6.2:5357
+06/28/2026-13:19:15.120842  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54100 -> 10.10.6.2:5357
+06/28/2026-13:19:15.120934  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54090 -> 10.10.6.2:5357
+06/28/2026-13:19:15.121015  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54074 -> 10.10.6.2:5357
+06/28/2026-13:19:15.169415  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54144 -> 10.10.6.2:5357
+06/28/2026-13:19:15.269050  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54158 -> 10.10.6.2:5357
+06/28/2026-13:19:15.417081  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54168 -> 10.10.6.2:5357
+06/28/2026-13:19:15.269140  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54146 -> 10.10.6.2:5357
+06/28/2026-13:19:15.417110  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54178 -> 10.10.6.2:5357
+06/28/2026-13:19:15.616906  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54194 -> 10.10.6.2:5357
+06/28/2026-13:19:15.417126  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54160 -> 10.10.6.2:5357
+06/28/2026-13:19:15.564787  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54184 -> 10.10.6.2:5357
+06/28/2026-13:19:16.012919  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54214 -> 10.10.6.2:5357
+06/28/2026-13:19:15.716951  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54204 -> 10.10.6.2:5357
+06/28/2026-13:19:15.764817  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54208 -> 10.10.6.2:5357
+06/28/2026-13:19:15.864905  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54212 -> 10.10.6.2:5357
+06/28/2026-13:19:16.165035  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:54228 -> 10.10.6.2:5357
+06/28/2026-13:21:13.232139  [**] [1:2221010:1] SURICATA HTTP unable to match response to request [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:5357 -> 10.10.4.1:51340
+06/28/2026-13:21:20.203486  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:49928 -> 10.10.6.2:445
+06/28/2026-13:21:20.203827  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:49944 -> 10.10.6.2:445
+06/28/2026-13:21:24.185657  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:49984 -> 10.10.6.2:445
+06/28/2026-13:21:24.185942  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:49968 -> 10.10.6.2:445
+06/28/2026-13:21:32.151510  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:49998 -> 10.10.6.2:445
+06/28/2026-13:35:01.665495  [**] [1:2260000:1] SURICATA Applayer Mismatch protocol both directions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:55212 -> 10.10.6.2:135
+06/28/2026-13:35:07.296424  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-13:35:09.501508  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-13:35:10.332501  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48134 -> 10.10.6.2:5357
+06/28/2026-13:35:10.332430  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48190 -> 10.10.6.2:5357
+06/28/2026-13:35:10.332506  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48120 -> 10.10.6.2:5357
+06/28/2026-13:35:10.332456  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48162 -> 10.10.6.2:5357
+06/28/2026-13:35:10.332821  [**] [1:2221034:1] SURICATA HTTP Request unrecognized authorization method [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:48104 -> 10.10.6.2:5357
+06/28/2026-13:35:10.332821  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48104 -> 10.10.6.2:5357
+06/28/2026-13:35:10.332513  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48092 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333069  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48102 -> 10.10.6.2:5357
+06/28/2026-13:35:10.332868  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48178 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333273  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48070 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333023  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48150 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333432  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48060 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333221  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48072 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333482  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48066 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333633  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48054 -> 10.10.6.2:5357
+06/28/2026-13:35:10.333678  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48050 -> 10.10.6.2:5357
+06/28/2026-13:35:10.436859  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:48206 -> 10.10.6.2:5357
+06/28/2026-13:35:10.436684  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48208 -> 10.10.6.2:5357
+06/28/2026-13:35:10.436859  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48206 -> 10.10.6.2:5357
+06/28/2026-13:35:10.437024  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48202 -> 10.10.6.2:5357
+06/28/2026-13:35:10.484648  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48218 -> 10.10.6.2:5357
+06/28/2026-13:35:10.484519  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48212 -> 10.10.6.2:5357
+06/28/2026-13:35:10.484890  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48224 -> 10.10.6.2:5357
+06/28/2026-13:35:10.484598  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48210 -> 10.10.6.2:5357
+06/28/2026-13:35:10.484843  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48234 -> 10.10.6.2:5357
+06/28/2026-13:35:10.538044  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48250 -> 10.10.6.2:5357
+06/28/2026-13:35:10.636484  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48266 -> 10.10.6.2:5357
+06/28/2026-13:35:10.588471  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48252 -> 10.10.6.2:5357
+06/28/2026-13:35:10.736473  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48272 -> 10.10.6.2:5357
+06/28/2026-13:35:10.784578  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48288 -> 10.10.6.2:5357
+06/28/2026-13:35:10.784556  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48300 -> 10.10.6.2:5357
+06/28/2026-13:35:10.932341  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48330 -> 10.10.6.2:5357
+06/28/2026-13:35:10.932408  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48316 -> 10.10.6.2:5357
+06/28/2026-13:35:11.084528  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48344 -> 10.10.6.2:5357
+06/28/2026-13:35:11.232562  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48360 -> 10.10.6.2:5357
+06/28/2026-13:35:11.084637  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48342 -> 10.10.6.2:5357
+06/28/2026-13:35:11.380526  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48376 -> 10.10.6.2:5357
+06/28/2026-13:35:11.528534  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48386 -> 10.10.6.2:5357
+06/28/2026-13:35:11.676670  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:48392 -> 10.10.6.2:5357
+06/28/2026-13:37:12.188207  [**] [1:2221010:1] SURICATA HTTP unable to match response to request [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:5357 -> 10.10.4.1:58442
+06/28/2026-13:37:17.165873  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:60592 -> 10.10.6.2:445
+06/28/2026-13:37:18.161498  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:60580 -> 10.10.6.2:445
+06/28/2026-13:37:19.157592  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:60598 -> 10.10.6.2:445
+06/28/2026-13:37:19.158006  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:60582 -> 10.10.6.2:445
+06/28/2026-13:37:24.136955  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:60612 -> 10.10.6.2:445
+06/28/2026-13:45:09.684640  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:39004
+06/28/2026-13:45:09.684640  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:39004
+06/28/2026-13:45:09.684938  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:39004 -> 10.10.6.2:22
+06/28/2026-13:55:35.053852  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:59748
+06/28/2026-13:55:35.053852  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:59748
+06/28/2026-13:55:35.054217  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:59748 -> 10.10.6.2:22
+06/28/2026-13:57:22.088292  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:38374
+06/28/2026-13:57:22.088292  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:38374
+06/28/2026-13:57:22.088368  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:38374 -> 10.10.6.2:22
+06/28/2026-13:57:42.035470  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:59748 -> 10.10.6.2:22
+06/28/2026-13:57:42.035471  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:59748
+06/28/2026-16:38:43.728502  [**] [1:2260000:1] SURICATA Applayer Mismatch protocol both directions [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:48194 -> 10.10.6.2:135
+06/28/2026-16:38:49.357767  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-16:38:51.602667  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-16:38:53.849972  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-16:38:57.596936  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-16:38:59.843412  [**] [1:2200025:2] SURICATA ICMPv4 unknown code [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMP} 10.10.4.1:8 -> 10.10.6.2:9
+06/28/2026-16:39:00.729243  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36060 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729298  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36134 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729284  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36136 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729320  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36132 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729361  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36098 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729333  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36108 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729374  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36090 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729409  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36080 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729386  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36086 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729545  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36124 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729559  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36074 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729570  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36046 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729590  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36032 -> 10.10.6.2:5357
+06/28/2026-16:39:00.729584  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36034 -> 10.10.6.2:5357
+06/28/2026-16:39:00.857400  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36162 -> 10.10.6.2:5357
+06/28/2026-16:39:00.857482  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36148 -> 10.10.6.2:5357
+06/28/2026-16:39:00.857494  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36144 -> 10.10.6.2:5357
+06/28/2026-16:39:00.909275  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36188 -> 10.10.6.2:5357
+06/28/2026-16:39:00.909207  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36214 -> 10.10.6.2:5357
+06/28/2026-16:39:00.909226  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36192 -> 10.10.6.2:5357
+06/28/2026-16:39:00.909233  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36202 -> 10.10.6.2:5357
+06/28/2026-16:39:00.909238  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36174 -> 10.10.6.2:5357
+06/28/2026-16:39:00.909263  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36212 -> 10.10.6.2:5357
+06/28/2026-16:39:00.957165  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36224 -> 10.10.6.2:5357
+06/28/2026-16:39:01.009278  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36232 -> 10.10.6.2:5357
+06/28/2026-16:39:01.057373  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:36238 -> 10.10.6.2:5357
+06/28/2026-16:39:01.057373  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36238 -> 10.10.6.2:5357
+06/28/2026-16:39:01.157384  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36248 -> 10.10.6.2:5357
+06/28/2026-16:39:01.209210  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36250 -> 10.10.6.2:5357
+06/28/2026-16:39:01.309497  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36258 -> 10.10.6.2:5357
+06/28/2026-16:39:01.357327  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36264 -> 10.10.6.2:5357
+06/28/2026-16:39:01.457246  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36276 -> 10.10.6.2:5357
+06/28/2026-16:39:01.557424  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36288 -> 10.10.6.2:5357
+06/28/2026-16:39:01.609339  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36302 -> 10.10.6.2:5357
+06/28/2026-16:39:01.709174  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36314 -> 10.10.6.2:5357
+06/28/2026-16:39:01.909146  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36332 -> 10.10.6.2:5357
+06/28/2026-16:39:01.761153  [**] [1:2024364:5] ET SCAN Possible Nmap User-Agent Observed [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 10.10.4.1:36324 -> 10.10.6.2:5357
+06/28/2026-16:40:49.627560  [**] [1:2221010:1] SURICATA HTTP unable to match response to request [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:5357 -> 10.10.4.1:51970
+06/28/2026-16:41:07.475915  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:41378 -> 10.10.6.2:445
+06/28/2026-16:41:11.460982  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:41404 -> 10.10.6.2:445
+06/28/2026-16:41:12.456471  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:41394 -> 10.10.6.2:445
+06/28/2026-16:41:12.457026  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:41424 -> 10.10.6.2:445
+06/28/2026-16:41:13.452151  [**] [1:2225005:1] SURICATA SMB malformed request dialects [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:41410 -> 10.10.6.2:445
+06/28/2026-16:57:27.463147  [**] [1:2019102:1] ET DOS Possible SSDP Amplification Scan in Progress [**] [Classification: Attempted Denial of Service] [Priority: 2] {UDP} 10.10.4.1:59924 -> 10.10.6.2:1900
+06/28/2026-17:00:24.138326  [**] [1:2260002:1] SURICATA Applayer Detect protocol only one direction [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:34168
+06/28/2026-17:00:24.138326  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.6.2:22 -> 10.10.4.1:34168
+06/28/2026-17:00:24.138554  [**] [1:2228000:1] SURICATA SSH invalid banner [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.10.4.1:34168 -> 10.10.6.2:22
